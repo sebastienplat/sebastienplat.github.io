@@ -1,0 +1,49 @@
+
+.navbar {
+    font-size: $base-fs;
+    font-weight: 300;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    height: $navbar-height;
+    
+    @include media-query($on-laptop) {
+        margin-bottom: 0px;
+        min-height: 30px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.7) !important;
+        &:hover { opacity: 0.8; }
+    }
+
+    .logo {
+        height: 35px;
+        width: 35px;
+    }
+
+    .navbar-toggler {
+        border: none;
+        &:focus { outline: none; }
+        @include media-query($on-laptop) {
+            padding: 0.25rem 0.5rem;
+        }
+    }
+
+    a.dropdown-item.nav-link {
+        @include media-query($on-laptop) {
+            padding-left: 15px;
+        }
+    }
+
+    .collapse.show {
+        margin-top: 10px;
+        border-top: 1px solid #eee;
+    }
+}
+
+.nav-link {
+    color: rgba(0, 0, 0, 0.7) !important;
+    &:hover, &.active { color: $brand-color !important; }
+}

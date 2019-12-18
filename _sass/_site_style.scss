@@ -1,0 +1,259 @@
+
+/* ---------- blog elements ---------- */
+
+.blog-list {
+    margin-bottom: 2em;
+    .image {
+        width: 250px;
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        vertical-align: middle;
+        @include media-query($on-palm) {
+            width: 100%;
+            height: 200px;
+        }
+    }
+
+    h3 {
+        font-size: $base-fs;
+    }
+    
+    .description {
+        font-size: $base-fs * 0.9;
+        color: $grey-color;
+    }
+    
+    .content {
+        align-self: center;
+        padding: 10px 40px;
+
+        @include media-query($on-palm) {
+            padding: 10px 20px;
+            text-align: justify;
+        }
+    }
+}
+
+.blog-list-preview {
+    
+    margin-left: 0;
+    margin-right: 0;
+    @extend .blog-list;
+    .image {
+        height: 250px;
+    }
+
+}
+
+.blog-sidebar {
+    padding: 0 0 0 30px;
+    font-size: $base-fs * 0.9;
+
+    @include media-query($on-palm) {
+        padding: 0;
+    }
+    
+    img {
+        margin: 0 !important;
+    }
+    
+    hr {
+        margin: 1rem 0;
+    }
+}
+
+.blog-index-title {
+    font-size: $base-fs * 1.1;
+}
+
+
+
+/* ---------- categories elements ---------- */
+
+.categories-page {
+    
+    p {
+        font-size: $small-fs;
+        padding: 0.5em;
+        margin: 0;
+    }
+    
+    .col-md-4 {
+        margin-bottom: 1em;
+    }
+    
+    .image {
+        height: 150px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+
+
+/* ---------- projects elements ---------- */
+
+.projects {
+    
+    margin-bottom: 1em;
+
+    p {
+        margin: 0;
+    }
+    
+    .content {
+        align-self: center;
+        margin-bottom: 1em;
+        .fa {
+            opacity: 0.7;
+            margin: 0.2em;
+        }
+        .b {
+          font-weight: bold;
+          margin-top: 0.25em;
+          margin-bottom: 0.25em;
+        }
+    }
+}
+
+
+
+
+
+
+
+/* ---------- portfolio elements ---------- */
+
+.portfolio-individual {
+    .details {
+        padding: 20px 0 0 10px;
+
+        @include media-query($on-palm) {
+            padding: 10px;
+        }
+
+        p {
+            font-size: $base-fs * 0.8;
+        }
+    }
+}
+
+
+
+/* ---------- intro elements ---------- */
+
+#intro {
+    margin-top: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    @include media-query($on-palm) {
+        margin-top: 0;
+    }
+}
+
+
+
+/* ---------- team elements ---------- */
+
+#team {
+  h6 {
+  }
+  .history,
+  .goals {
+    padding: 10px 20px;
+
+    p {
+      color: $grey-color;
+      font-size: $base-fs * 0.8;
+      text-align: justify;
+    }
+  }
+
+  .team-container {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .team-image {
+    -webkit-filter: greyscale(0.9);
+    filter: grayscale(0.9);
+
+    -webkit-transition: 500ms -webkit-filter linear;
+    -moz-transition: 500ms -moz-filter linear;
+    -moz-transition: 500ms filter linear;
+    -ms-transition: 500ms -ms-filter linear;
+    -o-transition: 500ms -o-filter linear;
+    transition: 500ms filter linear, 1s -webkit-filter linear;
+  }
+
+  .individual {
+    padding: 20px 0;
+    -moz-transition: all 100ms ease-in;
+    /* WebKit */
+    -webkit-transition: all 100ms ease-in;
+    /* Opera */
+    -o-transition: all 100ms ease-in;
+    /* Standard */
+    transition: all 100ms ease-in;
+  }
+
+  .name {
+    font-weight: 400;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 0;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  .position {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $grey-color;
+    font-size: $base-fs * 0.9;
+    text-transform: uppercase;
+  }
+
+  .team-social {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      a {
+        color: $grey-color;
+      }
+    }
+  }
+
+  .individual:hover {
+    background-color: lighten($brand-color, 20%);
+
+    li {
+      a {
+        color: white;
+      }
+    }
+
+    .name {
+      color: white;
+    }
+    .position {
+      color: white;
+    }
+    .team-image {
+      -webkit-filter: greyscale(0);
+      filter: grayscale(0);
+    }
+  }
+}
+

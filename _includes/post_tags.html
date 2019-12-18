@@ -1,0 +1,5 @@
+<div class="tags">
+    {% for item in page.tags %} 
+        <span><a href="/categories/#{{item | slugify }}">{{item | capitalize}}</a></span>
+    {% endfor %}
+</div>

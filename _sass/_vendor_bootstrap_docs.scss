@@ -1,0 +1,44 @@
+/*
+ * Bootstrap Docs (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+ * details, see https://creativecommons.org/licenses/by/3.0/.
+*/
+
+.bd-toc {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.bd-toc {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: .875rem;
+}
+
+.section-nav {
+    padding-left: 0;
+    border-left: 1px solid #eee;
+    
+    ul {
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+.toc-entry {
+    display: block;
+}
+
+.toc-entry > a {
+    display: block;
+    padding: .1rem 1rem;
+    color: #99979c;
+}
