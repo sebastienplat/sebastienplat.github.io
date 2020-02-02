@@ -1,22 +1,17 @@
-/***
- *                                                                              
- *     ,-----.          ,--.            ,-----.       ,--.                      
- *    '  .--./ ,---.  ,-|  | ,---.     '  .--./ ,---. |  | ,---. ,--.--. ,---.  
- *    |  |    | .-. |' .-. || .-. :    |  |    | .-. ||  || .-. ||  .--'(  .-'  
- *    '  '--'\' '-' '\ `-' |\   --.    '  '--'\' '-' '|  |' '-' '|  |   .-'  `) 
- *     `-----' `---'  `---'  `----'     `-----' `---' `--' `---' `--'   `----'  
- *                                                                              
- */
+
+.mjx-chtml {max-width: 100%;}
 
 .highlighter-rouge {
-        font-size: $small-fs;
-        border: 1px solid lighten($grey-color, 40%);
-        border-radius: 4px;
-        padding: 2px 10px;
-        @include media-query($on-palm) {
-            font-size: $small-fs*0.7;
-        }
+    /*
+    font-size: $small-fs;
+    border: 1px solid lighten($grey-color, 40%);
+    border-radius: 4px;
+    padding: 2px 10px;
+    @include media-query($on-palm) {
+        font-size: $small-fs*0.7;
     }
+    */
+}
     
 .highlight {
     
@@ -48,16 +43,7 @@
         word-wrap: break-word;       
     }
     */
-    
-    pre {
-        white-space: pre;      
-        white-space: -moz-pre; 
-        white-space: -pre;      
-        white-space: -o-pre;   
-        word-break: break-all;
-        word-wrap: break-word;
-    }
-    
+  
     pre{
         margin: 25px 0 30px;
         padding: 14px;
@@ -68,6 +54,24 @@
         border: 0;
         border-left: 4px solid #ccc;
         border-radius: 0;
+    }
+    
+    /*
+    pre, pre code {
+        white-space: pre;      
+        white-space: -moz-pre; 
+        white-space: -pre;      
+        white-space: -o-pre;   
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+    */
+    
+    .c, .c1, .cm, .cs {
+        display: block;
+        width: 100%;
+        word-wrap: normal;
+        white-space: normal;
     }
     
     /* Github theme: https://github.com/jwarby/jekyll-pygments-themes/blob/master/github.css*/

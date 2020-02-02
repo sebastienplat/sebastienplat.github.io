@@ -13,19 +13,26 @@
 }
 
 .post-title {
-    max-width: 80vw;
     font-weight: 900;
     line-height: 1.8em;
-    font-size: 5rem;
+    font-size: 4rem;
+    /*
     text-transform: uppercase;
     bottom: 20%;
+    max-width: 80vw;
     color: white;
+    */
 
     @include media-query($on-palm) {
         line-height: 1.5em;
         font-size: 1.6em;
     }
 
+}
+
+.post-subtitle {
+    margin-top: -1.8em;
+    margin-bottom: 3.5em;
 }
 
 .tags {

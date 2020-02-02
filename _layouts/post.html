@@ -1,20 +1,26 @@
 ---
 layout: default
 ---
-
+<!--
 <header class="position-relative text-center d-flex justify-content-center">
     <div class="header-image" style="background-image: url({{page.image}})"></div>
-    <h1 class="post-title position-absolute">{{page.title}}</h1>
+    <h1 class="post-title">{{page.title}}</h1>
 </header>
+-->
 
 <div class="container-fluid">
 
-    <div class="row flex-xl-nowrap justify-content-end">
-        <div class="col-md-8 col-lg-6">
+    <div class="row flex-xl-nowrap justify-content-around">
+        
+        <div class="d-none d-lg-block col-md-1"></div>
+        
+        <div class="col-md-8 col-lg-6 col-max-820">
   
-            {% include site_nav_breadcrumbs.html %}
+            <!--{ include site_nav_breadcrumbs.html %}-->
             
-            <div class="article-date article-time">
+            <div class="post-title">{{page.title}}</div>
+            
+            <div class="post-subtitle">
                 <p><small>
                     <span>
                         <i class="fa fa-calendar" aria-hidden="true"></i> {{page.date | date_to_string }}&nbsp;
@@ -29,8 +35,8 @@ layout: default
                 {{content}}
             </article>
             
-            {% if page.tags %}
-                {% include post_tags.html %}
+            {% if page.categories %}
+                {% include post_categories.html categories=page.categories %}
             {% endif %}
             
             {% if site.share %}
@@ -41,8 +47,6 @@ layout: default
                 {% include post_disqus.html %}
             {% endif %}
 
-        </div>
-        <div class="d-none d-lg-block col-lg-1">
         </div>
         
         <div class="d-none d-md-block col-md-2 bd-toc">

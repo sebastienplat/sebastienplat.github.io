@@ -53,10 +53,18 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="{{site.baseurl}}/assets/img/apple-icon-152x152.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="{{site.baseurl}}/assets/img/android-icon-192x192.png">
 	<link rel="shortcut icon" href="{{site.baseurl}}/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="{{site.baseurl}}/assets/img/favicon.ico" type="image/x-icon">
     -->
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
     
     {% if site.enable-mathjax %}
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                processEscapes: true
+              }
+            });
+        </script>
         <script async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
         </script>

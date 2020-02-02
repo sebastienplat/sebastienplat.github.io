@@ -30,23 +30,15 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+# This defines how the URLs should look like
+permalink: /blog/:title/
+
 markdown: kramdown    # Kramdown is supported by Github
 enable-mathjax: yes   # Mathjax setting
 share: yes            # Change it to `no` to remove share buttons (setup in _includes)
  
-### Misc
-collections:
-    authors:
-        output: true
-
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+# Jekyll will read contents inside _pages only if we tell it to
+include:
+  - _pages
+  
 
