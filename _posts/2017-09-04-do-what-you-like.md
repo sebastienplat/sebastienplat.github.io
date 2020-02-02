@@ -2,7 +2,7 @@
 title: Do what you like!
 image: /assets/images/posts/julia-caesar-15080-unsplash.jpg
 author: john
-categories: 
+tags: 
     - life
     - work
 layout: post

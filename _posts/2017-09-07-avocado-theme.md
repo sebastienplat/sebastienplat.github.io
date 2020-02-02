@@ -25,7 +25,16 @@ def bubble_sort(items):
                 # Swap!
                 items[j], items[j+1] = items[j+1], items[j]
 {% endhighlight %}             
-                
+
+```python
+def bubble_sort(items):
+    """ Implementation of bubble sort """
+    for i in range(len(items)):
+        for j in range(len(items)-1-i):
+            if items[j] > items[j+1]:
+                # Swap!
+                items[j], items[j+1] = items[j+1], items[j]
+```
 
 Avocado is a bootstrap based, clean, minimal Jekyll theme.
 
