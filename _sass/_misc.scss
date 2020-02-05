@@ -1,0 +1,38 @@
+
+.fa-arrow-right {
+  opacity: 0.8;
+}
+
+.double-u {
+  font-size: $base-fs;
+  text-decoration-style: double;
+  text-decoration-line: underline;
+}
+
+.details {
+  padding: 1em 4em;
+
+  @include media-query($on-laptop) {
+    padding: 1em;
+  }
+  @include media-query($on-palm) {
+    padding: 1em;
+  }
+  .fa {
+    font-size: 300%;
+    vertical-align: sub;
+    @include media-query($on-laptop) {
+      font-size: 200%;
+    }
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  .text-right {
+    @include media-query($on-laptop) {
+      text-align: justify !important;
+    }
+  }
+}

@@ -1,0 +1,311 @@
+
+/* ---------- site overview ---------- */
+
+/* scroll to anchor links*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* handle fixed navbar height for anchor links - http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/ */
+:target { 
+    border-top: $navbar-height-padding solid transparent;
+    margin-top: - $navbar-height-padding;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+
+body {
+    background: #fefefe;
+    font-family: $base-ff;
+    font-size: $base-fs;
+    font-weight: $base-fw;
+    color: $color;
+    line-height: $base-lh;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+	overflow-x: hidden;
+
+    /*
+    @include media-query($on-palm) {
+        font-size: $base-fs * 0.7;
+    }
+    */
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: $small-fs;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    font-size: $small-fs;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    font-size: $small-fs;
+}
+:-moz-placeholder { /* Firefox 18- */
+    font-size: $small-fs;
+}
+
+
+
+/* ---------- containers ---------- */
+
+.wrapper {
+    display: block;
+    position: relative;
+    min-height: calc(100vh - #{$navbar-height});
+    background: #fff;
+    @include media-query($on-laptop) {
+        margin: 0;
+    }
+
+    > .container {
+        @include media-query($on-laptop) {
+            padding: 0;
+        }
+    }
+    
+    /* footer height */
+    padding-bottom: 200px;
+}
+
+.content-wrapper {
+    margin-top: $navbar-height;
+}
+
+/* add space between navbar and page layout to make it breathe */
+.page {
+    padding-top: 2em;
+}
+
+section {
+    
+    /* min-height: 400px; */
+	padding: 50px 0 50px 0;
+    
+    .section-title {
+        font-family: $base-ff;
+        color: $grey-color;
+        text-transform: uppercase;
+        line-height: 1.8;
+        margin-bottom: 50px;
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          border-bottom: 3px solid lighten($brand-color, 10%);
+          width: 10%;
+          margin: 0 auto;
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+}
+
+.col-max-820 {max-width: 820px;}
+
+/* ---------- generic elements ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: $head-ff;
+    font-weight: 600;
+    line-height: $base-lh * 1.1;
+    color: $brand-color;
+	/*text-transform: uppercase;*/
+}
+
+h1 {
+    font-size: 2.2em;
+    /*
+    @include media-query($on-palm) {
+        font-size: 2em;
+    }
+    */
+}
+
+h2 {
+    font-size: 1.8em;
+    /*
+    @include media-query($on-palm) {
+        font-size: 1.5em;
+    }
+    */
+}
+
+h3 {
+    font-size: 1.4em;
+    /*
+    @include media-query($on-palm) {
+        font-size: 1.3em;
+    }
+    */
+}
+
+h4, h5, h6 {
+    font-size: 1em;
+    /*
+    @include media-query($on-palm) {
+        font-size: 1.1em;
+    }
+    */
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    text-align: justify;
+    
+    /*
+    @include media-query($on-palm) {
+        font-size: 18px;
+    }
+    */
+    
+    /* move ul and ol closer to the previous paragraph*/
+    + ul, + ol {
+        margin-top: -0.5em;
+    }
+}
+
+ul, ol {
+    margin-bottom: 1em;
+}
+
+p, ul, ol, figure, blockquote, table {
+    + h1, + h2, + h3, + h4, + h5, + h6 {
+        padding-top: 1.1em;
+    } 
+}
+
+a {
+    color: $brand-color;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+        color: $color;
+        text-decoration: none !important;
+    }
+    
+    .nostyle {
+        color: $color;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+hr {
+	margin: 3em 0;
+}
+
+code.language-plaintext {
+    background-color: rgba(0,0,0,.04);
+    color: #333;
+    padding: 2px 8px;
+}
+
+blockquote {
+    border-left: 5px solid $brand-color;
+    padding-left: 1em;
+    margin-left: 1em;
+    font-style: italic;
+    font-size: 1.2em;
+    font-family: $system-ff;
+    
+    /*
+    @include media-query($on-palm) {
+        font-size: 1.5em;
+        padding-left: 0.5em;
+        margin-left: 0.5em;
+    }
+    */
+}
+
+
+
+/* ---------- custom class elements ---------- */
+
+.video {
+    width: 100% !important;
+    height: 515px !important;
+    margin-bottom: 1em;
+    @include media-query($on-palm) {
+        height: 250px !important;
+    }
+}
+
+.car-image {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.cards {
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    &:hover {
+        -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}
+
+.logo-box {
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        bottom: 5px;
+    }
+    h3 {
+        display: inline-block;
+    }
+}
+
+.borders {
+    border: 1px solid #ddd;
+}
+
+.bg-primary {
+    background: lighten($brand-color, 10%) !important;
+}
+
+/* padding */
+.pd {
+    padding: 2em 1em;
+    /*
+    @include media-query($on-palm) {
+        padding: 1em 0.2em;
+    }
+    */
+}
+
+/* padding small */
+.pds {
+    padding: 1em;
+    /*
+    @include media-query($on-palm) {
+        padding: 1em;
+    }
+    */
+}
+
+
+

@@ -1,0 +1,27 @@
+
+.btn,
+[class*="btn-"] {
+    font-weight: lighter !important;
+    border-radius: 2px !important;
+    font-weight: 300 !important;
+    color: $brand-color;
+    padding: 5px 15px !important;
+    cursor: pointer;
+    &:hover {
+        color: #fff !important;
+        background-color: $brand-color !important;
+    }
+}
+
+.btn-default {
+    border: 1px solid $brand-color;
+    background-color: #fff;
+}
+
+.btn-primary,
+.btn-success,
+.btn-warning,
+.btn-danger {
+    border: 0;
+    color: #eee;
+}

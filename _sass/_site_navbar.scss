@@ -1,0 +1,65 @@
+
+.navbar {
+    
+    height: $navbar-height;
+    background-color: $brand-color;
+    box-shadow: 0 2px 5px rgba(0,0,0,.26);
+    border: none;
+    
+    padding-top: 0; 
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    
+    font-family: Montserrat, sans-serif;
+    font-size: $base-fs;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    .navbar-nav .nav-link, .navbar-brand, .navbar-toggler {
+        height: $navbar-height;
+        color: #fff;
+        line-height: 20px;
+        &:hover { 
+            color: #fff;
+            background-color: $brand-color-dark; 
+        }
+    }
+    
+    .navbar-brand {
+        padding: 16px 15px !important;
+        font-weight: 600;
+        font-size: 18px; 
+    }
+
+    .navbar-nav a {
+        padding: 17px 15px !important;
+        font-size: 14px;
+    }
+    
+    .navbar-toggler {
+        border: none;
+        border-radius: 0;
+        &:focus { outline: none; }
+        @include media-query($on-laptop) {
+            padding: 0.25rem 0.5rem;
+        }
+    }
+   
+    /*
+    .logo {
+        height: 35px;
+        width: 35px;
+    }
+    
+    a.dropdown-item.nav-link {
+        @include media-query($on-laptop) {
+            padding-left: 15px;
+        }
+    }
+
+    .collapse.show {
+        margin-top: 10px;
+        border-top: 1px solid #eee;
+    }
+    */
+}
