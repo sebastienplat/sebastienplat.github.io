@@ -26,7 +26,7 @@ body {
     text-rendering: optimizeLegibility;
     height: 100%;
 	overflow-x: hidden;
-    
+
     /*
     @include media-query($on-palm) {
         font-size: $base-fs * 0.7;
@@ -52,6 +52,7 @@ body {
 /* ---------- containers ---------- */
 
 .wrapper {
+    display: block;
     position: relative;
     min-height: calc(100vh - #{$navbar-height});
     background: #fff;
@@ -64,19 +65,17 @@ body {
             padding: 0;
         }
     }
+    
+    /* footer height */
+    padding-bottom: 200px;
 }
 
 .content-wrapper {
-    /*min-height: 100vh;*/
     margin-top: $navbar-height;
-    /*
-    @include media-query($on-palm) {
-        margin-top: 50px;
-    }
-    */
 }
 
-.container.page {
+/* add space between navbar and page layout to make it breathe */
+.page {
     padding-top: 2em;
 }
 
@@ -107,6 +106,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 200px;
 }
 
 .col-max-820 {max-width: 820px;}
