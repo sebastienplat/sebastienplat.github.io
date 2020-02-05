@@ -1,4 +1,4 @@
-# Correlation between variables
+## Correlation between variables
 
 Correlation is the measure of dependance between two variables; It typically indicates their linear relationship, but more broadly measures how in sync they vary. This is expressed by their **covariance**. 
 

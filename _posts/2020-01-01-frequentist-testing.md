@@ -1,10 +1,11 @@
-# Introduction
+
+## Introduction
 
 > The goal of statistical inference is to make **generalizations about the population** when **only a sample is available**.
 
 ___
 
-# Selecting a test
+## Selecting a test
 
 Identifying wich test to use starts with two questions:
 + how many categories of population do you have (example: male vs female, three different trial groups)

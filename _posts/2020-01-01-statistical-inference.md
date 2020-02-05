@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 > The goal of statistical inference is to make **generalizations about the population** when **only a sample is available**.
 
@@ -14,7 +14,7 @@ We draw our conclusions about the parameter from the sample **statistic**. Three
 ___
 
 
-# Sampling
+## Sampling
 
 ### Methods
 
@@ -44,7 +44,7 @@ _Note: other [**criteria**](https://en.wikipedia.org/wiki/Selection_bias) can al
 ___
 
 
-# Inference Problems
+## Inference Problems
 
 ### Estimation of parameter
 
@@ -68,7 +68,7 @@ _Note: Large samples approximate the population distribution more closely, so we
 ___
 
 
-# Frequentist  vs Bayesian Paradigms
+## Frequentist  vs Bayesian Paradigms
 
 Both paradigms are based on the likelihood but their frameworks are entirely different.
 
@@ -97,7 +97,7 @@ Baysesian statistics, on the other hand, make no such assumptions. They are espe
 ___
 
 
-# Parameter estimation
+## Parameter estimation
 
 The goal of [parameter estimation](https://en.wikipedia.org/wiki/Point_estimation) is to find the best approximation of the population parameter given our sample data; there are many possibilities. We'll focus on the following two: 
 
@@ -127,7 +127,7 @@ _Note1: for constant priors, the MAP is equal to the MLE._
 ___
 
 
-# Hypothesis Testing
+## Hypothesis Testing
 
 ### Experimentation Design
 
@@ -196,7 +196,7 @@ The caveat is that you need to collect data for the sample of size $N$ calculate
 
 ___
 
-# Central Limit Theorem
+## Central Limit Theorem
 
 ### Definition
 
@@ -236,7 +236,7 @@ It means that we can calculate the z-score of our sample statistic to calculate 
 ___
 
 
-# Further Reads
+## Further Reads
 
 A few interesting Wikipedia articles:
 
