@@ -14,8 +14,10 @@
 
 .post-title {
     font-weight: 900;
-    line-height: 1.8em;
     font-size: 4rem;
+    line-height: 1.8em;
+    color: $brand-color;
+    
     /*
     text-transform: uppercase;
     bottom: 20%;
