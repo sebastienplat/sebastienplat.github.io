@@ -1,4 +1,3 @@
-# Bayesian A/B Testing
 
 ## Introduction
 
@@ -16,11 +15,13 @@ Some applications include:
 
 Frequentist approach:
 + Frequentist assume there is a **true value** for a given population parameter. 
-+ Inference exists to estimate it to a given level of confidence: $\hat{\theta} = \text{argmax}_\theta P(X | \theta)$.
++ Inference exists to estimate it to a given level of confidence: 
+    $$\hat{\theta} = \text{argmax}_\theta P(X \| \theta)$$.
 
 Bayesian approach:
 + Bayesian assume the given population parameter is a **random variable**. 
-+ Inference exits to calculate its **posterior probability distribution** from the data we have collected: $P(\theta | X)$.
++ Inference exits to calculate its **posterior probability distribution** from the data we have collected: 
+    $$P(\theta \| X)$$.
 
 Sampling methods:
 + Importance sampling
@@ -126,7 +127,7 @@ ctr.plot_pvalues()
 ```
 
 
-![png](output_14_0.png)
+![png](../../assets/images/posts/2020-01-01-bayesian-ab-testing/output_14_0.png)
 
 
 
@@ -140,7 +141,7 @@ ctr.plot_pvalues()
 ```
 
 
-![png](output_15_0.png)
+![png](../../assets/images/posts/2020-01-01-bayesian-ab-testing/output_15_0.png)
 
 
 ___
@@ -159,7 +160,7 @@ Draw $r$ times from a population of $n$ (with or without repetition):
 
 Relationship between events:
 + **Marginal** probability: P(A)
-+ **Conditional** probability P(B|A): probability of B given A
++ **Conditional** probability P(B\|A): probability of B given A
 + **Joint** probability P(A ∩ B): Intersection of two events A and B 
 + Union of two events P(A ∪ B): A or B
 + Complement of an event P(A'): not A
@@ -167,8 +168,8 @@ Relationship between events:
 Note: 
 + rule of substraction: P(A) = 1 - P(A')
 + rule of addition: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
-+ rule of multiplication: P(A ∩ B) = P(A) P(B|A)
-+ rule of multiplication: P(A ∩ B ∩ C) = P(A) P(B|A) P(C|AB)
++ rule of multiplication: P(A ∩ B) = P(A) P(B\|A)
++ rule of multiplication: P(A ∩ B ∩ C) = P(A) P(B\|A) P(C\|AB)
 
 <br>
 
@@ -177,19 +178,19 @@ Events are:
 + Dependant when the outcome of one has some effect on others (example: draw without replacement)
 
 Note for independant events: 
-+ P(B|A) = P(B) so P(A ∩ B) = P(A) P(B)
++ P(B\|A) = P(B) so P(A ∩ B) = P(A) P(B)
 
 ### Bayes Theorem
 
-We know that P(A ∩ B) = P(A) P(B|A) = P(B) P(A|B). It means that (Bayes Theorem):
-+ P(A|B) = P(B|A) $\times$ P(A) / P(B)
+We know that P(A ∩ B) = P(A) P(B\|A) = P(B) P(A\|B). It means that (Bayes Theorem):
++ P(A\|B) = P(B\|A) $\times$ P(A) / P(B)
 
 Where:
-+ P(B) = sum [ P(B|A) $\times$ P(A) ] for all A _(or integral for continuous data)_
++ P(B) = sum [ P(B\|A) $\times$ P(A) ] for all A _(or integral for continuous data)_
 
 Notes:
-+ probabilities equal to one when considering the space of random variables. The sum of P(B|A) will be equal to one for each given value of A.
-+ P(B) does not depend on A, so $\text{argmax}_A P(A|B) = \text{argmax}_A P(B|A) P(A)$
++ probabilities equal to one when considering the space of random variables. The sum of P(B\|A) will be equal to one for each given value of A.
++ P(B) does not depend on A, so $\text{argmax}_A P(A\|B) = \text{argmax}_A P(B\|A) P(A)$
 
 ### Curse of Dimensionality
 
@@ -217,20 +218,20 @@ Let's use the following notations:
 
 Bayes Theorem states that:
 
-+ P(NOK|NDI) = P(NDI|NOK) P(NOK) / P(NDI)
++ P(NOK\|NDI) = P(NDI\|NOK) P(NOK) / P(NDI)
 
 Where:
-+ P(NDI|NOK) = 0.99 - true positive
++ P(NDI\|NOK) = 0.99 - true positive
 + P(NOK) = 0.002
-+ P(NDI) = P(NDI|NOK) x P(NOK) + P(NDI|OK) x P(OK) = true positive + false positive = 0.99 x 0.002 + 0.01 x 0.998
++ P(NDI) = P(NDI\|NOK) x P(NOK) + P(NDI\|OK) x P(OK) = true positive + false positive = 0.99 x 0.002 + 0.01 x 0.998
 
 It means that:
-+ P(NOK|NDI) = 16.5%
++ P(NOK\|NDI) = 16.5%
 
 If we run a second test that is _also_ positive on the same product, we can update the probability of it being _really_ defective using the result of the first test:
 
 + P(NOK) = 16.5%
-+ P(NOK|NDI) = 95.1%
++ P(NOK\|NDI) = 95.1%
 
 ### Coin tosses
 
@@ -243,17 +244,17 @@ We want to toss a fair coin 200 times. After 20 tosses, we have 15H and 5T. What
 
 A show has three doors to choose from, and behind one of them is a car. After you choose one door, the host reveals another one and asks you if you want to switch. Should you do it?
 
-Let's imagine you choose door N°1 and the host opens door at door you did not pick, for instance N°2. You want to calculate the probabilities of P(D1 | H2) and P(D3 | H2), where P(Dx) is the probability that the car is behind door N°x and H2 the door that the host has chosen.
+Let's imagine you choose door N°1 and the host opens door at door you did not pick, for instance N°2. You want to calculate the probabilities of P(D1 \| H2) and P(D3 \| H2), where P(Dx) is the probability that the car is behind door N°x and H2 the door that the host has chosen.
 
-+ P(Dx | H2) = P(H2 | Dx) * P(Dx) / P(H2)
-+ P(H2) = P(H2 | D1) * P(D1) + P(H2 | D2) * P(D2) + P(H2 | D3) * P(D3) 
++ P(Dx \| H2) = P(H2 \| Dx) * P(Dx) / P(H2)
++ P(H2) = P(H2 \| D1) * P(D1) + P(H2 \| D2) * P(D2) + P(H2 \| D3) * P(D3) 
 
-Let's look at P(H2 | Dx):
-+ P(H2 | D1) = 0.5   - the host could have chosen either door N°2 or door N°3
-+ P(H2 | D2) = 0     - the host would not reveal the car
-+ P(H2 | D3) = 1     - the host would always avoid revealing the door that the contestant chose if possible
+Let's look at P(H2 \| Dx):
++ P(H2 \| D1) = 0.5   - the host could have chosen either door N°2 or door N°3
++ P(H2 \| D2) = 0     - the host would not reveal the car
++ P(H2 \| D3) = 1     - the host would always avoid revealing the door that the contestant chose if possible
 
-A simple calculation gives P(D1 | H2) = 1/3 and P(D3 | H2) = 2/3: you should switch doors.
+A simple calculation gives P(D1 \| H2) = 1/3 and P(D3 \| H2) = 2/3: you should switch doors.
 
 ___
 
@@ -261,21 +262,21 @@ ___
 
 The bayesian approach treats $\theta$ as a random variable.
 
-+ $P(\theta | X) = P(X | \theta) \times P(\theta) / P(X)$
++ $P(\theta \| X) = P(X \| \theta) \times P(\theta) / P(X)$
 + $P(X)$ does not depend on $\theta$. It's called the **normalizing constant** $Z$.
 + $P(\theta)$ is called the **prior**: the old belief about $\theta$
-+ $P(X | \theta)$ is called the **likelihood**: how likely is the data we have collected given the current $\theta$
-+ $P(\theta | X)$ is called the **posterior**: the new belief about $\theta$ after seeing the data.
++ $P(X \| \theta)$ is called the **likelihood**: how likely is the data we have collected given the current $\theta$
++ $P(\theta \| X)$ is called the **posterior**: the new belief about $\theta$ after seeing the data.
 
-_Note: $P(X)$ is the integral over $P(X | \theta) P(\theta) d\theta$ and is impossible to solve without sampling methods like MCMC_.
+_Note: $P(X)$ is the integral over $P(X \| \theta) P(\theta) d\theta$ and is impossible to solve without sampling methods like MCMC_.
 
 ### Conjugate Priors
 
-If we choose specific distributions for $P(X | \theta)$ and $P(\theta)$, called **[conjugate priors](https://en.wikipedia.org/wiki/Conjugate_prior)**, we can make the posterior $P(\theta | X)$ follow the same type of distribution as the prior $P(\theta)$.
+If we choose specific distributions for $P(X \| \theta)$ and $P(\theta)$, called **[conjugate priors](https://en.wikipedia.org/wiki/Conjugate_prior)**, we can make the posterior $P(\theta \| X)$ follow the same type of distribution as the prior $P(\theta)$.
 
-For instance, if $P(X | \theta)$ is Bernoulli, then $\theta$ follows a distribution going from 0 to 1. Its PDF can be modelled by $P(\theta) = Beta(a, b)$. Combining both Bernoulli likelihood function and $\theta$ distribution, we can show that $P(\theta | X)$ follows a Beta distribution:
+For instance, if $P(X \| \theta)$ is Bernoulli, then $\theta$ follows a distribution going from 0 to 1. Its PDF can be modelled by $P(\theta) = Beta(a, b)$. Combining both Bernoulli likelihood function and $\theta$ distribution, we can show that $P(\theta \| X)$ follows a Beta distribution:
 
-+ $P(\theta | X) = Beta(a', b')$
++ $P(\theta \| X) = Beta(a', b')$
 + $a' = a + \text{count of successes}$, $b' = b + \text{count of failures}$.
 
 We can choose the original values $a = b = 1$: this amounts to chooses a **non-informative prior** $P(\theta) = Beta(1, 1) = \text{Uniform(0, 1)}$. As the sample size increases, the influence of prior becomes negligible.
@@ -313,7 +314,7 @@ ax2.legend(loc='upper left')
 
 
 
-![png](output_34_1.png)
+![png](../../assets/images/posts/2020-01-01-bayesian-ab-testing/output_34_1.png)
 
 
 Note: We can compare the probability of two independent events $\mu_1$ and $\mu_2$. 
@@ -392,13 +393,13 @@ Thompson sampling draws a random number from all current Beta distributions, the
 Remember the conjugate priors idea for Bernoulli distributions: a' and b' count the number of successes and failures that happened since we last updated the prior:
 
 + $P(\theta) = Beta(a, b)$
-+ $P(\theta | X) = Beta(a', b')$
++ $P(\theta \| X) = Beta(a', b')$
 + $a' = a + \text{count of successes}$, $b' = b + \text{count of failures}$.
 
 We update a' and b' at each step, which means that we update a and b at every step: we leverage our posterior to udpate the new prior $P(\theta_{t+1})$.
 
 + $P(\theta_t) = Beta(a_t, b_t)$
-+ $P(\theta_t | X_t) = Beta(a'_t, b'_t)$ where $a'_t = a_t + isSuccess$, $b'_t = b_t + isFailure$
++ $P(\theta_t \| X_t) = Beta(a'_t, b'_t)$ where $a'_t = a_t + isSuccess$, $b'_t = b_t + isFailure$
 + $P(\theta_{t+1}) = Beta(a'_t, b'_t)$
 
 ### Implementation
@@ -626,7 +627,7 @@ mab.plot_ctr()
     
 
 
-![png](output_49_1.png)
+![png](../../assets/images/posts/2020-01-01-bayesian-ab-testing/output_49_1.png)
 
 
 
@@ -642,7 +643,7 @@ mab.plot_ctr()
     
 
 
-![png](output_50_1.png)
+![png](../../assets/images/posts/2020-01-01-bayesian-ab-testing/output_50_1.png)
 
 
 
@@ -658,7 +659,7 @@ mab.plot_ctr()
     
 
 
-![png](output_51_1.png)
+![png](../../assets/images/posts/2020-01-01-bayesian-ab-testing/output_51_1.png)
 
 
 

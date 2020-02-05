@@ -1,4 +1,4 @@
-# Data Types
+## Data Types
 
 We leverage several kinds of data to do statistical analysis:
 
@@ -17,7 +17,7 @@ For both cases, the probability $P(X<=x)$ is given by the **Cumulative Distribut
 
 ___
 
-# Discrete Data
+## Discrete Data
 
 ### Uniform distribution
 
@@ -91,7 +91,7 @@ $$P(k \text{ events in interval}) = \frac{\lambda^k e^{-\lambda}}{k!}$$
 
 ___
 
-#  Continuous Data
+##  Continuous Data
 
 Continuous data are typically associated with their:
 
