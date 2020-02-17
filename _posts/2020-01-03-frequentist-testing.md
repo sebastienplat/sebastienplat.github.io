@@ -1,15 +1,16 @@
-
-## Introduction
-
-> The goal of statistical inference is to make **generalizations about the population** when **only a sample is available**.
-
-___
-
 ## Selecting a test
 
-Identifying wich test to use starts with two questions:
-+ how many categories of population do you have (example: male vs female, three different trial groups)
-+ what is the type of the variable to analyze: nominal, measurement or ranked
+We aim to check if a relationship exists between some **features** an a given **outcome variable**. Identifying which test to use depends on the type(s) of variables.
+
+| Outcome - Data Type | Features - Data Type      | Features - Possible Values | Assumptions                  | $H_0$                                                          | Test Name              |
+|:--------------------|:--------------------------|:---------------------------|:-----------------------------|:---------------------------------------------------------------|------------------------|
+| Continuous          | Categorical - One         | One                        | Outcome is roughly Gaussian. | Sample has mean $\mu_0$.                                       | T-test against $\mu_0$ |
+| Continuous          | Categorical - One         | Two                        | Outcome is roughly Gaussian. | Samples have the same mean.                                    | T-test                 |
+| Continuous          | Categorical - One         | Three or more              | Outcome is roughly Gaussian. | Samples have the same mean.                                    | One-Way ANOVA          |
+| Continuous          | Categorical - Two or more | One or more per Feature    | Outcome is roughly Gaussian. | Samples have the same mean.                                    | N-Way ANOVA            |
+| Categorical         | -                         | -                          | -                            | Each category $i$ has $P(i)$.                                  | One-Way Chi-Squared    |
+| Categorical         | Categorical - Two         | Two or more                | -                            | Categorical Features are independent. | Two-Way Chi-Squared    |
+| Ranked              | Categorical - One         | Two or more                | -                            | Samples have the same average rank.                            | Kruskal–Wallis test    |
 
 Note: 
 + Z-tests for mean serve the same purpose as ANOVA
@@ -18,6 +19,7 @@ Note:
 Both tests compare a sample to a given population. Formally, the population SD needs to be known, but we can use a t-test with the sample standard deviation if not.
 
 Additional information can be found [here](http://www.biostathandbook.com/).
+
 
 ### T-test & ANOVA
 
@@ -236,7 +238,7 @@ plt.show()
 ```
 
 
-![png](../../assets/images/posts/2020-01-01-frequentist-testing/output_40_0.png)
+![png](output_39_0.png)
 
 
 ### F-value
@@ -484,7 +486,7 @@ plt.show()
 ```
 
 
-![png](../../assets/images/posts/2020-01-01-frequentist-testing/output_54_0.png)
+![png](output_53_0.png)
 
 
 ### One-way Chi-Square
