@@ -1,20 +1,21 @@
 
 .navbar {
     
-    height: $navbar-height;
+    /* overall setup */
     background-color: $brand-color;
     box-shadow: 0 2px 5px rgba(0,0,0,.26);
     border: none;
+    
+    /* text */
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     
     padding-top: 0; 
     padding-bottom: 0;
     margin-bottom: 20px;
     
-    font-family: Montserrat, sans-serif;
-    font-size: $base-fs;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    
+    /* elements - generic setup */
     .navbar-nav .nav-link, .navbar-brand, .navbar-toggler {
         height: $navbar-height;
         color: #fff;
@@ -25,6 +26,7 @@
         }
     }
     
+    /* element-specific setup */
     .navbar-brand {
         padding: 16px 15px !important;
         font-weight: 600;
@@ -36,30 +38,16 @@
         font-size: 14px;
     }
     
+    /* remove outline from toggler */
     .navbar-toggler {
         border: none;
         border-radius: 0;
         &:focus { outline: none; }
-        @include media-query($on-laptop) {
-            padding: 0.25rem 0.5rem;
-        }
-    }
-   
-    /*
-    .logo {
-        height: 35px;
-        width: 35px;
     }
     
-    a.dropdown-item.nav-link {
-        @include media-query($on-laptop) {
-            padding-left: 15px;
-        }
-    }
+    @media (max-width: $screen-xs-max) {
+        /* move the collapse button closer to the edge on mobile */
+        .navbar { padding-right: 5px; }
+	}
 
-    .collapse.show {
-        margin-top: 10px;
-        border-top: 1px solid #eee;
-    }
-    */
 }

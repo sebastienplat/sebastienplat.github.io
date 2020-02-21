@@ -6,6 +6,8 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
 	<!-- Prefetch DNS for faster page speed -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -14,6 +16,13 @@
 	<link rel="dns-prefetch" href="//google-analytics.com">
 	<link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
 	
+    <!-- Prerender next pages for faster page speed -->
+	{% if page.url == '/' %}
+        <link rel="prerender" href="/contact/" />
+        <link rel="prerender" href="/about/" />
+        <link rel="prerender" href="/blog/" />
+	{% endif %}
+    
     <!-- Google Analytics code. <head> tag is the right place for analytics code as directed by Google. 
         This is unofficial light version which loads blazing fast! Implemented for faster page load.  -->
     {% if site.analytics %}
@@ -28,47 +37,23 @@
 	{% endif %}
     -->
     
-    <!-- Prerender next pages for faster page speed -->
-	{% if page.url == '/' %}
-        <link rel="prerender" href="/contact/" />
-        <link rel="prerender" href="/about/" />
-        <link rel="prerender" href="/blog/" />
-	{% endif %}
-    
-    <!-- 
-	{% if page.layout != 'post' %}
-        <meta property="og:image" content="{{site.url}}{{site.default-image}}" />
-	{% endif %}
-    -->
-    
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="/assets/css/style.css">
 
 	<!-- Fontawesome Icons CSS -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <!-- Replace these icons with your own. 
-	<link rel="apple-touch-icon" sizes="60x60" href="{{site.baseurl}}/assets/img/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="{{site.baseurl}}/assets/img/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="{{site.baseurl}}/assets/img/apple-icon-152x152.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="{{site.baseurl}}/assets/img/android-icon-192x192.png">
-	<link rel="shortcut icon" href="{{site.baseurl}}/favicon.ico" type="image/x-icon">
-    -->
-    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
-    
-    {% if site.enable-mathjax %}
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-              tex2jax: {
-                inlineMath: [['$','$'], ['\\(','\\)']],
-                processEscapes: true
-              }
-            });
-        </script>
-        <script async
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
-        </script>
-    {% endif %}
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            processEscapes: true
+          }
+        });
+    </script>
+    <script async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
     
 </head>
 
@@ -85,7 +70,14 @@
 		{% include site_footer.html %}
         
 	</div>
-
+       
+    <!-- boostrap js (collapse and other uses -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity=
+    "sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    
 </body>   
   
 </html>
