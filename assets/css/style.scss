@@ -12,9 +12,11 @@ $small-fs:         $base-fs * 0.775;
 $base-lh:          1.6;
 $color:            #444;
 $h-color:          #eee;
+
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+
 /* $brand-color: 	   #6a5acd; */
 $brand-color: 	   #2c5aa0;
 $brand-color-dark: #214478;
@@ -27,6 +29,8 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+$screen-xs-max: 575px;
+
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
@@ -38,20 +42,15 @@ $on-laptop:        800px;
     "vendor_google-fonts",      /* fonts from googleapis */
     "vendor_bootstrap",         /* full bootstrap 4 */
     "vendor_bootstrap_docs",    /* css of bootstrap 4 docs website - post toc */
+    
     "site_base",                /* site - generic components (headers, p, a, img, hr) */
     "site_navbar",              /* site - navigation bar */
-    "site_nav_breadcrumbs",     /* site - navigation breadcrumbs */
     "site_footer",              /* site - footer */
+    
     "site_buttons",             /* site - buttons */
     "site_style",               /* site - component-specific css */
 
-    "home_portfolio",           /* specific css - portfolio */
-    "home_services",            /* specific css - services */
-    "home_latest-posts",        /* specific css - latest posts */
-    
-    "owl.carousel",             /* carousel */
-    "owl.theme.default",
-    
+    "blog_list",
     "post_base",
     "post_table",
     "post_code_highlighting",
