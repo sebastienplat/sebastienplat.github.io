@@ -1,37 +1,38 @@
 
 footer {
-  font-weight: 300;
-  background: #222;
-  color: #ddd;
-  padding: 40px 0;
-
-  h3 {
-    font-family: $base-ff;
-    text-transform: uppercase;
-    font-size: $base-fs * 0.8;
-  }
-
-  p {
-    font-size: $base-fs * 0.7;
+    
     font-weight: 300;
-    color: #aaa;
-    line-height: 1.3;
-  }
+    background: #222;
+    color: #ddd;
+    padding: 40px 0;
 
-  a {
-    font-size: $base-fs * 0.7;
-    font-weight: 300;
-    color: #aaa;
-    line-height: 1.3;
-    &:hover {
-      color: #fff;
+    h3 {
+        font-family: $base-ff;
+        text-transform: uppercase;
+        font-size: $base-fs * 0.8;
     }
-  }
 
-  ul,
-  li {
-    list-style: none;
-    padding: 0;
-    line-height: 1.3;
-  }
+    p {
+        font-size: $base-fs * 0.7;
+        font-weight: 300;
+        color: #aaa;
+        line-height: 1.3;
+    }
+
+    a {
+        font-size: $base-fs * 0.7;
+        font-weight: 300;
+        color: #aaa;
+        line-height: 1.3;
+        &:hover {
+        color: #fff;
+        }
+    }
+
+    ul, li {
+        list-style: none;
+        padding: 0;
+        line-height: 1.3;
+    }
+    
 }

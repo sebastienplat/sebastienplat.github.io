@@ -1,41 +1,39 @@
 
-.header-image {
-    height: 80vh;
-    width: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    @include media-query($on-palm) {
-        height: 35vh;
-        margin-top: 50px;
-    }
+
+
+
+.post-wrapper {
+    background-color: #f7f7f7;    
 }
 
+.col-max-820 { 
+    max-width: 820px; 
+    background-color: #fff;
+    padding: 20px 55px;
+} 
+
+@media (max-width: $screen-sm-max) {
+    .col-max-820 { padding: 20px 20px; }
+}
+
+
+
+/* ---------- title ---------- */
+
 .post-title {
-    font-weight: 900;
-    font-size: 4rem;
-    line-height: 1.8em;
     color: $brand-color;
-    
-    /*
-    text-transform: uppercase;
-    bottom: 20%;
-    max-width: 80vw;
-    color: white;
-    */
-
-    @include media-query($on-palm) {
-        line-height: 1.5em;
-        font-size: 1.6em;
-    }
-
+    font-weight: 600;
+    font-size: 3em;
 }
 
 .post-subtitle {
-    margin-top: -1.8em;
+    margin-top: -1.5em;
     margin-bottom: 3.5em;
 }
+
+
+
+/* ---------- bottom of page  ---------- */
 
 .tags {
     
@@ -57,8 +55,20 @@
     }
 }
 
-.disqus {
-    margin: 2em 0;
+.share-box {
+    
+    margin: 1.5em 0;
+   
+    a {
+        color: $grey-color;
+        border-radius: 50%;
+        text-decoration: none;
+        margin-left: 1em;
+         &:hover {
+            text-decoration: none;
+            color: black;
+        }
+    }
 }
 
 .recent {
@@ -74,3 +84,19 @@
         margin: 1rem 0;
     }
 }
+
+/*
+.header-image {
+    height: 80vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+*/
+
+/*
+.disqus {
+    margin: 2em 0;
+}
+*/

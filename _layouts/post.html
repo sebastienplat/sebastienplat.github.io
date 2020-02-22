@@ -8,27 +8,29 @@ layout: default
 </header>
 -->
 
-<div class="container-fluid">
+<div class="post-wrapper container-fluid">
 
-    <div class="row flex-xl-nowrap justify-content-around">
+    <div class="row d-flex justify-content-between">
         
-        <div class="d-none d-lg-block col-md-1"></div>
+        <div class="d-none d-md-block col-md-2"></div>
         
-        <div class="col-md-8 col-lg-6 col-max-820">
-              
-            <div class="post-title">{{page.title}}</div>
+        <div class="col-md-8 col-max-820">
             
-            <div class="post-subtitle">
-                <p><small>
-                    <span>
-                        <i class="fa fa-calendar" aria-hidden="true"></i> {{page.date | date_to_string }}&nbsp;
-                    </span>
-                    <span>
-                        <i class="fa fa-clock-o" aria-hidden="true"></i> {% include post_reading-time.html %}
-                    </span>
-                </small></p>
+            <div class='post-head'>
+                <h1 class="post-title">{{page.title}}</h1>
+                
+                <div class="post-subtitle">
+                    <p><small>
+                        <span>
+                            <i class="fa fa-calendar" aria-hidden="true"></i> {{page.date | date_to_string }}&nbsp;
+                        </span>
+                        <span>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i> {% include post_reading-time.html %}
+                        </span>
+                    </small></p>
+                </div>
             </div>
-         
+            
             <article>
                 {{content}}
             </article>
@@ -47,16 +49,18 @@ layout: default
 
         </div>
         
-        <div class="d-none d-md-block col-md-2 bd-toc">
-            {% include post_toc.html html=content class="section-nav" subclass="toc-entry.toc-h2"%}
+        <div id='toc' class="d-none d-md-block col-md-2 bd-toc list-group">
+            {% include post_toc.html html=content class="section-nav" subclass="toc-entry" aclass="list-group-item.list-group-item-action"%}
         </div>
         
     </div>
     
+    <!--
     <div class="row recent justify-content-center">
         <div class="col-md-8 col-lg-6">
             {% include post_recent.html %}
         </div>
     </div>
+    -->
 </div>
 
