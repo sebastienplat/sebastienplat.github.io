@@ -1,5 +1,7 @@
 
 
+
+
 .post-wrapper {
     background-color: #f7f7f7;    
 }
@@ -10,14 +12,13 @@
     padding: 20px 55px;
 } 
 
-
-/* ---------- small screens ---------- */
-
 @media (max-width: $screen-sm-max) {
     .col-max-820 { padding: 20px 20px; }
 }
 
 
+
+/* ---------- title ---------- */
 
 .post-title {
     color: $brand-color;
@@ -29,6 +30,10 @@
     margin-top: -1.5em;
     margin-bottom: 3.5em;
 }
+
+
+
+/* ---------- bottom of page  ---------- */
 
 .tags {
     
@@ -46,6 +51,22 @@
             &:hover {
                 background-color: rgba(0, 0, 0, 0.10);
             }
+        }
+    }
+}
+
+.share-box {
+    
+    margin: 1.5em 0;
+   
+    a {
+        color: $grey-color;
+        border-radius: 50%;
+        text-decoration: none;
+        margin-left: 1em;
+         &:hover {
+            text-decoration: none;
+            color: black;
         }
     }
 }

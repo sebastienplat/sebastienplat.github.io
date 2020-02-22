@@ -1,0 +1,33 @@
+
+.bd-toc {
+    position: sticky;
+    top:4rem;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+    padding: 15px;
+    
+}
+.section-nav {
+    padding: 0;
+    border-left: 1px solid #eee;
+    ul {
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    ul, li { margin-bottom: 0; }
+}
+
+.toc-entry {
+    display: block;
+    > a {
+        display: block;
+        padding: .1rem 1rem;
+        color: #99979c;
+        font-size: 14px;
+        line-height: 1.75em;
+        &:hover{
+            color: $brand-color;
+            text-decoration: none;
+        }
+    }
+}

@@ -31,7 +31,6 @@ $screen-sm-max: 767px;
 /* sass files */
 @import 
     "vendor_bootstrap",         /* full bootstrap 4 */
-    "vendor_bootstrap_docs",    /* css of bootstrap 4 docs website - post toc */
     
     "site_base",                /* site overall layout (navbar / wrappers / footer) */
     "site_text",                /* site-wide text setup (font / font size / padding) */
@@ -43,7 +42,7 @@ $screen-sm-max: 767px;
     "post_base",
     "post_table",
     "post_code_highlighting",
-    "post_share_buttons",
+    "post_toc",
     
     "site_style"                /* site - component-specific css */
 ;    
