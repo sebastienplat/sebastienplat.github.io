@@ -54,7 +54,7 @@
     {% endfor %}
 
 {% capture my_toc %}{{ my_toc }}
-{{ space }}- {:.{{ include.subclass }}}[{% if include.sanitize %}{{ header | strip_html }}{% else %}{{ header }}{% endif %}](#{{ html_id }}){% endcapture %}
+{{ space }}- {:.{{ include.subclass }}}[{% if include.sanitize %}{{ header | strip_html }}{% else %}{{ header }}{% endif %}](#{{ html_id }}){:.{{ include.aclass }}}{% endcapture %}
 
 {% endfor %}
 

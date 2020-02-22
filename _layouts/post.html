@@ -49,8 +49,8 @@ layout: default
 
         </div>
         
-        <div class="d-none d-md-block col-md-2 bd-toc">
-            {% include post_toc.html html=content class="section-nav" subclass="toc-entry.toc-h2"%}
+        <div id='toc' class="d-none d-md-block col-md-2 bd-toc list-group">
+            {% include post_toc.html html=content class="section-nav" subclass="toc-entry" aclass="list-group-item.list-group-item-action"%}
         </div>
         
     </div>
