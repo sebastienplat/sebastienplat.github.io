@@ -22,25 +22,12 @@ body {
 	overflow-x: hidden;
 }
 
-
 /* wraps the entire page  min-height accounts for fixed navbar height to not scroll needlessly on empty pages */
 .wrapper {
     display: block;
     position: relative;
     min-height: calc(100vh - #{$navbar-height});
     background: #fff;
-    
-    /*
-    @include media-query($on-laptop) {
-        margin: 0;
-    }
-    
-    > .container {
-        @include media-query($on-laptop) {
-            padding: 0;
-        }
-    }
-    */
     
     /* footer height */
     padding-bottom: 200px;
