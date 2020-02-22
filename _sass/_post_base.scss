@@ -5,11 +5,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    @include media-query($on-palm) {
-        height: 35vh;
-        margin-top: 50px;
-    }
 }
 
 .post-title {
@@ -17,19 +12,6 @@
     font-size: 4rem;
     line-height: 1.8em;
     color: $brand-color;
-    
-    /*
-    text-transform: uppercase;
-    bottom: 20%;
-    max-width: 80vw;
-    color: white;
-    */
-
-    @include media-query($on-palm) {
-        line-height: 1.5em;
-        font-size: 1.6em;
-    }
-
 }
 
 .post-subtitle {
