@@ -1,0 +1,184 @@
+
+/* Article title */
+@font-face {
+    font-family: 'League Spartan';
+    src: url('./fonts/league-spartan/leaguespartan-bold.eot');
+    src: url('./fonts/league-spartan/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+             url('./fonts/league-spartan/leaguespartan-bold.woff2') format('woff2'),
+             url('./fonts/league-spartan/leaguespartan-bold.woff') format('woff'),
+             url('./fonts/league-spartan/leaguespartan-bold.ttf') format('truetype'),
+             url('./fonts/league-spartan/leaguespartan-bold.svg#league_spartanbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+    
+/* google fonts */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
+
+
+/* font variables */
+$color: #333; /* 373f47 47525d #444 */
+
+$base-fs: 18px;
+$small-fs: 16px;
+$base-fw: 400;
+$head-fw: 400;
+$base-lh: 1.75em;
+
+$pw-text-padding: 40px;
+$pw-header-padding: 80px; 
+
+$head-ff: 'Work Sans', sans-serif;
+$base-ff: 'Open Sans', sans-serif;
+
+::-webkit-input-placeholder { font-size: $small-fs; }   /* Chrome/Opera/Safari */
+:-moz-placeholder { font-size: $small-fs; }             /* Firefox 18- */
+::-moz-placeholder { font-size: $small-fs; }            /* Firefox 19+ */
+:-ms-input-placeholder { font-size: $small-fs; }        /* IE 10+ */
+
+
+
+/* ---------- body ---------- */
+
+body {
+    font-family: $base-ff;
+    font-size: $base-fs;
+    font-weight: $base-fw;
+    color: $color;
+    line-height: $base-lh;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+/* ---------- headers ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $head-ff;
+    font-weight: $head-fw;
+    color: $brand-color;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    
+    /* no margin between two successive headings */
+    + h1, + h2, + h3, + h4, + h5, + h6 {
+        margin-top: 0;
+    }
+            
+    /*text-transform: uppercase;*/
+    /*
+    margin: 0;
+    line-height: $base-lh * 1.1;
+    */
+}
+
+h1 {
+    font-size: 2.2em;
+    /*
+    @include media-query($on-palm) {
+        font-size: 2em;
+    }
+    */
+}
+
+h2 {
+    font-size: 1.8em;
+    /*
+    @include media-query($on-palm) {
+        font-size: 1.5em;
+    }
+    */
+}
+
+h3 {
+    font-size: 1.4em;
+    /*
+    @include media-query($on-palm) {
+        font-size: 1.3em;
+    }
+    */
+}
+
+h4, h5, h6 {
+    font-size: 1em;
+    /*
+    @include media-query($on-palm) {
+        font-size: 1.1em;
+    }
+    */
+}
+
+
+
+/* ---------- paragraphs & lists ---------- */
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    text-align: justify;
+    
+    /* move ul and ol closer to the previous paragraph*/
+    + ul, + ol { margin-top: -0.5em; }
+}
+
+ul, ol { margin-bottom: 1em; }
+li { margin-bottom: 0.3em; }
+
+
+/* nested paragraphs & lists */
+ul p, ul ul, ul ol, ol p, ol ul, ol ol {
+    margin-bottom: 1em;		
+}
+
+p, ul, ol, figure, blockquote, table {
+    + h1, + h2, + h3, + h4, + h5, + h6 {
+        padding-top: 1.1em;
+    } 
+}
+
+/* list following p, p following lists */
+p + ul, p + ol { margin-top: -0.4em; } // closer 
+ul + p, ol + p { margin-top: 1.5em; }  // more far away
+li > p { margin-bottom: 0.5em; }
+
+/* no margin for first child */
+h1, h2, h3, h4, h5, h6, p {
+    &:first-child { margin-top: 0; }
+}
+
+/* list padding */
+@media (max-width: $screen-sm-max) {
+    ul, ol { padding-left: 25px; }
+}
+
+
+
+/* ---------- others ---------- */
+
+hr { margin: 3em 0; }
+
+
+/* inline code */
+code.language-plaintext {
+    background-color: rgba(0,0,0,.04);
+    color: $color; 
+    padding: 2px 8px;
+}
+
+
+/* blockquote: uniform with code block */
+blockquote {
+    border-left: 4px solid lighten($brand-color, 10%);
+    font-style: italic;
+    p:last-child {
+        margin-bottom: 0;
+    }
+    
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    margin-bottom: 1.1em;
+}
+
+
