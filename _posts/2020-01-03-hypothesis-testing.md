@@ -1,52 +1,43 @@
-## Selecting a test
+We have explains which test to choose in the article on [statistical inference](https://sebastienplat.github.io/blog/statistical-inference/), based on:
 
-We aim to check if a relationship exists between some **features** an a given **outcome variable**. Identifying which test to use depends on the type(s) of variables.
++ what hypothesis is tested.
++ the type of the variable of interest & its probability distribution. 
 
-| Outcome - Data Type | Features - Data Type      | Features - Possible Values | Assumptions                  | $H_0$                                                          | Test Name              |
-|:--------------------|:--------------------------|:---------------------------|:-----------------------------|:---------------------------------------------------------------|------------------------|
-| Continuous          | Categorical - One         | One                        | Outcome is roughly Gaussian. | Sample has mean $\mu_0$.                                       | T-test against $\mu_0$ |
-| Continuous          | Categorical - One         | Two                        | Outcome is roughly Gaussian. | Samples have the same mean.                                    | T-test                 |
-| Continuous          | Categorical - One         | Three or more              | Outcome is roughly Gaussian. | Samples have the same mean.                                    | One-Way ANOVA          |
-| Continuous          | Categorical - Two or more | One or more per Feature    | Outcome is roughly Gaussian. | Samples have the same mean.                                    | N-Way ANOVA            |
-| Categorical         | -                         | -                          | -                            | Each category $i$ has $P(i)$.                                  | One-Way Chi-Squared    |
-| Categorical         | Categorical - Two         | Two or more                | -                            | Categorical Features are independent. | Two-Way Chi-Squared    |
-| Ranked              | Categorical - One         | Two or more                | -                            | Samples have the same average rank.                            | Kruskal–Wallis test    |
+The following article covers practical examples of several tests.
 
-Note: 
+___
+
+## Choosing a test
+
+### Z-Tests
+
 + Z-tests for mean serve the same purpose as ANOVA
 + Z-tests for proportions serve the same purpose as chi-square tests
 
 Both tests compare a sample to a given population. Formally, the population SD needs to be known, but we can use a t-test with the sample standard deviation if not.
 
-Additional information can be found [here](http://www.biostathandbook.com/).
-
-
 ### T-test & ANOVA
 
-The variable to analyze is **measurement**: you want to compare the **mean** among categories.
-+ **T-test** for roughly Gaussian-distributed data; the test statistic follows a **t-distribution**. 
-    + only one measurement variable
-    + only one or two samples _(note: for one-sample, you will test against a number that needs to be known beforehand)_
-    + both one-tail and two-tailed alternate hypothesis are possible
-+ **ANOVA** for roughly Gaussian-distributed data; the test statistic follows an **F-distribution**. 
-    + one-way ANOVA when only one measurement variable
-    + N-ways otherwise
-    + The only alternate hypothesis is that the different categories have different means.
-+ **non-parametric** tests otherwise _(typically with less assumptions so less statistical power)_
+The variable to analyze is **continuous**: you want to compare the **mean** among categories.
++ **T-test** when one or two samples (the test statistic follows a **t-distribution**). 
+    + one sample _(test against a number that needs to be known beforehand)_.
+    + two samples.
+    + both one-tail and two-tailed alternate hypothesis are possible.
++ **ANOVA** when more than two samples (the test statistic follows an **F-distribution**):
+    + one-way ANOVA when only one categorical variable.
+    + N-ways otherwise.
+    + the only alternate hypothesis is that the different categories have different means.
+
+**Non-parametric** tests can be used when the assumptions of these tests are not met _(typically with less assumptions so less statistical power)_.
 
 ### Chi-Square
 
 The variable to analyze is **nominal**: you want to compare the **frequencies** among categories.
-+ **Chi-Square** test; the test statistic follows a **Chi-Square distribution**.
-    + One-way when the nominal variable only has one value (ex: repartition of patient discharges per day of the week)
-    + Two-way otherwise: test of independance or conformity (ex: comparing proportion among population categories)
++ **Chi-Square** test (the test statistic follows a **Chi-Square distribution**).
+    + One-way when the categorical variable only has one value (ex: repartition of patient discharges per day of the week).
+    + Two-way otherwise: test of independance or conformity (ex: comparing proportion among population categories).
     + The only alternate hypothesis is that the different categories have different frequencies.
 + **Fisher's exact test** if the sample size is small
-
-### Kruskal–Wallis
-
-The variable to analyze is **ranked**: you want to compare the **ranks** among categories.
-+ **Kruskal–Wallis** test
 
 ### Bonferroni Corrections
 
@@ -55,7 +46,7 @@ The chance of capturing rare event increases when testing multiple hypothesis. I
 The Bonferroni correction rejects the null hypothesis for each $p_{i} \leq \frac {\alpha}{m}$. This ensures the [Family Wise Error Rate](https://en.wikipedia.org/wiki/Family-wise_error_rate) stays below the significance level $\alpha$. More information can be found [here](https://stats.stackexchange.com/questions/153122/bonferroni-correction-for-post-hoc-analysis-in-anova-regression).
 
 It is useful for post-hoc tests after performing one-way ANOVA or Chi-Square tests that reject the null hypothesis. When comparing $N$ multiple groups, we can either do:
-+ pairwise tesing. In that case, $m$ will be ${N \choose 2}$.
++ pairwise testing. In that case, $m$ will be ${N \choose 2}$.
 + one vs the rest. In that case, $m$ will be $N$.
 
 ___
@@ -118,25 +109,29 @@ ___
 
 ## T-tests
 
-### Assumptions
+### T-Distribution
 
 The CLT and Z-scores assume **we know the population standard deviation**. Using them does not work when:
 
-+ **$\sigma$ is unknown**
-+ the sample size **$n$ is small**
++ **$\sigma$ is unknown**.
++ the sample size **$n$ is small**.
 
-We can substitute the normal distribution with the [Student’s t distribution](https://en.wikipedia.org/wiki/Student's_t-distribution) to represent the **sampling distribution** of the sample statistic when:
-
-+ the sample size **is large** (30+ observations), OR
-+ the **population** is roughly **normal** (very small samples)
+The t-test is any statistical hypothesis test in which the test statistic follows a [Student’s t distribution](https://en.wikipedia.org/wiki/Student's_t-distribution) under the null hypothesis. 
 
 The tails of the Student Distribution are **thicker than normal** to reflect the **additional uncertainty** introduced by using the sample standard deviation. They get closer to the normal distribution as the degrees of freedom increase (ie. when the sample size increases).
 
 _Note: when the sample size is large (30+ observations), the Student Distribution becomes extremely close to the normal distribution._
 
-Notes:
-+ If the sample size is very small, we can use normal probability plots to check whether the sample may come from a normal distribution.
-+ If the t-distribution cannot be used, we can use more robust procedures like the one-sample [**Wilcoxon procedure**](https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test).
+
+### Types of t-tests
+
+There are three main types of t-tests:
++ **one-sample** t-test: check if a sample is part of a population.
++ **dependent paired-samples** t-test: check if the statistic of the same sample evolve over time.
++ **independent two-samples** t-test: check if two samples are part of the same population.
+    + same sample size, equal variance.
+    + different sample size, equal variance.
+    + different variance (Welch's t-test).
 
 ### T-statistic
 
@@ -144,16 +139,6 @@ A t-statistic will be larger (i.e. less likely to happen by chance) if:
 + the compared statistic values are very different 
 + the pooled standard deviation is small, ie. the compared distributions do not overlap much
 + the samples are large
-
-### Types of t-tests
-
-There are three main types of t-tests:
-+ **one-sample** t-test: check if a sample is part of a population
-+ **dependent paired-samples** t-test: check if the statistic of the same sample evolve over time
-+ **independent two-samples** t-test: check if two samples are part of the same population
-    + same sample size, equal variance
-    + different sample size, equal variance
-    + different variance (Welch's t-test)
 
 ### One-sample
 
@@ -199,20 +184,6 @@ ___
 
 ## ANOVA
 
-ANOVA allows us to:
-+ check if **more than two samples** belong to the same population.
-+ check if two samples come from populations that have the **same variance**.
-
-### Assumptions
-
-The ANOVA is mathematically considered a [generalized linear model (GLM)](https://pythonfordatascience.org/anova-python/). It means that its assumptions are the same as for linear regression:
-
-+ Normality
-+ Homogeneity of variance
-+ Independent observations
-
-If group sizes are equal, the F-statistic is robust to violations of normality and homogeneity of variance. If these assumptions are not met, we can use either the Kruskal-Wallis H-test or the Welch’s ANOVA.
-
 ### F-distribution
 
 The [F-Distribution](https://www.geo.fu-berlin.de/en/v/soga/Basics-of-statistics/Continous-Random-Variables/F-Distribution/index.html) has two numbers of degrees of freedom: the denominator (sample size) and numerator (number of samples). 
@@ -238,7 +209,7 @@ plt.show()
 ```
 
 
-![png](output_39_0.png)
+![png](../../assets/images/posts/hypothesis-testing/output_33_0.png)
 
 
 ### F-value
@@ -486,7 +457,7 @@ plt.show()
 ```
 
 
-![png](output_53_0.png)
+![png](../../assets/images/posts/hypothesis-testing/output_47_0.png)
 
 
 ### One-way Chi-Square
