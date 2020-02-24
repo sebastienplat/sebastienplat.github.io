@@ -209,7 +209,7 @@ plt.show()
 ```
 
 
-![png](../../assets/images/posts/hypothesis-testing/output_33_0.png)
+![png](../../assets/images/posts/hypothesis-testing/f_dist.png)
 
 
 ### F-value
@@ -457,7 +457,7 @@ plt.show()
 ```
 
 
-![png](../../assets/images/posts/hypothesis-testing/output_47_0.png)
+![png](../../assets/images/posts/hypothesis-testing/chi_dist.png)
 
 
 ### One-way Chi-Square
