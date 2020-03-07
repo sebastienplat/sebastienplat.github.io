@@ -11,7 +11,9 @@
     top:4rem;
     height: calc(100vh - 4rem);
     overflow-y: auto;
-    padding: 15px;   
+    padding: 15px 30px 15px 0;   
+    
+    &.navbar-collapse { align-items: flex-start; }
 }
 
 .section-nav {
@@ -51,4 +53,33 @@
         }
     }
 }
+
+@media (max-width: $screen-xs-max) {
+    .bd-toc { 
+        width: 250px;
+        position: fixed;
+        top: $navbar-height;
+        right: 0;
+        height: calc(100vh - #{$navbar-height});
+        padding-left: 0;
+        background: #fff; /* lighten($brand-color, 20%); */
+        /* color: $brand-color; */
+        border-left: 1px solid $brand-color;
+        z-index: 999;
+    }
+    
+    .overlay {
+        position: fixed;
+        top:0;
+        left: 0;
+        width: calc(100vw - 250px);
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+    }
+    
+    
+    .section-nav { border: none; }
+}
+
 

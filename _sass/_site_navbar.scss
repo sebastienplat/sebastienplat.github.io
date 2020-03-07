@@ -19,7 +19,7 @@
     .navbar-nav .nav-link, .navbar-brand, .navbar-toggler {
         color: #fff;
         line-height: 20px;
-        &:hover { 
+        &:hover, &.active { 
             color: #fff;
             background-color: $brand-color-dark; 
         }

@@ -48,11 +48,15 @@ layout: default
             {% endif %}
 
         </div>
-        
-        <div id='toc' class="d-none d-md-block col-md-2 bd-toc list-group">
-            {% include post_toc.html html=content class="section-nav" subclass="toc-entry" aclass="list-group-item.list-group-item-action"%}
+      
+        <div class="col-md-2 navbar-expand-sm">
+            <div class="collapse navbar-collapse bd-toc" id="navbarNavAltMarkup">
+                <div id='toc' class="list-group">
+                    {% include post_toc.html html=content class="section-nav" subclass="toc-entry" aclass="list-group-item.list-group-item-action"%}
+                </div>
+                <div class="overlay"></div>
+            </div>
         </div>
-        
     </div>
     
     <!--
