@@ -4,33 +4,18 @@
        
         <a class="navbar-brand" href="/">
             <!--<img src="/assets/img/apple-icon-60x60.png" class="d-inline-block align-top logo" alt="{{site.title}}">-->
-            Sebastien Plat
+            <span class='d-none d-sm-block'>Sebastien Plat</span>
+            <span class='d-block d-sm-none'>SP</span>
         </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
+        
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link {% if page.url == '/blog/' %}active{% endif %}" href="/blog/">Blog</a>
+        </div>
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav mr-auto">
-            
-                {% for item in site.data.navbar %}
-                    <a class="nav-item nav-link {% if page.url == item.link %}active{% endif %}" href="{{item.link}}">{{item.title}}</a>
-                {% endfor %}
-                
-                <!--
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Portfolio
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item nav-link" href="/portfolio/">Item</a>
-                        <a class="dropdown-item nav-link" href="/portfolio/">Another Item</a>
-                    </div>
-                </li>
-                -->
-            </div>
-        </div>
     </div>
 </nav>
