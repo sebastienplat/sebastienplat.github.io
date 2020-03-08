@@ -54,9 +54,9 @@
     }
 }
 
-@media (max-width: $screen-xs-max) {
+@media (max-width: $screen-md-max) {
     .bd-toc { 
-        width: 250px;
+        
         position: fixed;
         top: $navbar-height;
         right: 0;
@@ -72,14 +72,21 @@
         position: fixed;
         top:0;
         left: 0;
-        width: calc(100vw - 250px);
+        
         height: 100vh;
         background: rgba(0, 0, 0, 0.7);
         z-index: 998;
     }
     
-    
     .section-nav { border: none; }
 }
+@media screen and (max-width: $screen-xs-max) { 
+    .bd-toc { width: 250px; } 
+    .overlay { width: calc(100vw - 250px); }
+}
 
+@media screen and (min-width: $screen-xs-max + 1) and (max-width:$screen-md-max) { 
+    .bd-toc { width: 300px; }
+    .overlay { width: calc(100vw - 300px); }    
+}
 

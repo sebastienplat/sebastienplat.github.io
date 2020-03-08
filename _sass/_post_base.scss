@@ -16,6 +16,10 @@
     .col-max-820 { padding: 20px 20px; }
 }
 
+@media screen and (min-width: $screen-sm-max + 1) and (max-width:$screen-md-max) { 
+    .col-max-820 { margin: auto; }
+}
+
 
 
 /* ---------- title ---------- */

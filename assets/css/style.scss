@@ -19,6 +19,8 @@ $navbar-height-padding: 64px;
 /* Width of the content area */
 $screen-xs-max: 575px;
 $screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
 
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
