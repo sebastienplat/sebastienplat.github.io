@@ -18,7 +18,7 @@
     /* elements - generic setup */
     .navbar-nav .nav-link, .navbar-brand, .navbar-toggler {
         color: #fff;
-        line-height: 20px;
+        line-height: 24px;
         &:hover, &.active { 
             color: #fff;
             background-color: $brand-color-dark; 
@@ -27,13 +27,13 @@
     
     /* element-specific setup */
     .navbar-brand {
-        padding: 16px 15px !important;
+        padding: 15px !important;
         font-weight: 600;
         font-size: 18px; 
     }
 
     .navbar-nav a {
-        padding: 17px 15px !important;
+        padding: 15px !important;
         font-size: 14px;
     }
     
@@ -43,10 +43,9 @@
         border-radius: 0;
         &:focus { outline: none; }
     }
-    
-    @media (max-width: $screen-xs-max) {
-        /* move the collapse button closer to the edge on mobile */
-        .navbar { padding-right: 5px; }
-	}
 
+}
+@media (max-width: $screen-sm-max) {
+    /* move the collapse button closer to the edge on mobile */
+    .navbar { padding-right: 0 !important; }
 }
