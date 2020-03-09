@@ -1,7 +1,7 @@
 
 .scrollspy-example {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - #{$navbar-height});
     margin-top: inherit;
     overflow: auto;
 }
@@ -16,21 +16,33 @@
     &.navbar-collapse { align-items: flex-start; }
 }
 
-.section-nav {
+ul.section-nav {
     padding: 0;
+    margin-bottom: 0;
     border-left: 1px solid #eee;
-    ul {
-        padding-left: 1rem;
-        padding-bottom: 0.5rem;
-    }
+    
+    ul { padding-left: 15px; }
     ul, li { margin-bottom: 0; }
+    
+    > .toc-entry { padding-bottom: 10px; }
+    &.article-part {
+        > .toc-entry { padding-bottom: 15px; }
+        .list-group-item {
+            padding: 10px 0;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 16px;
+            border-bottom: 1px solid #eee;
+            border-radius: 0;
+        }
+    }
 }
 
 .toc-entry {
     display: block;
     > a {
         display: block;
-        padding: .1rem 1rem;
+        padding: 1px 15px;
         color: #99979c;
         font-size: 14px;
         line-height: 1.75em;
