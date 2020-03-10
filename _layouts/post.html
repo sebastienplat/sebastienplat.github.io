@@ -52,13 +52,36 @@ layout: default
         <div class="col-lg-2 navbar-expand-lg">
             <div class="collapse navbar-collapse bd-toc" id="navbarNavAltMarkup">
                 <div id='toc' class="list-group">
-                    <ul class="section-nav article-part">
-                        <li class="toc-entry"><span class="list-group-item">Test</span></li>
-                    </ul>
-                    <ul class="section-nav article-part">
-                        <li class="toc-entry"><span class="list-group-item">Test</span></li>
-                        {% include post_toc.html html=content class="section-nav" subclass="toc-entry" aclass="list-group-item.list-group-item-action"%}
-                    </ul>
+                    {% include post_toc.html   
+                        html=content 
+                        title="Test2"
+                        titlelink="/curse-of-dimensionality/"
+                        titleclass="article-part"
+                        iscurrent="no"
+                        class="section-nav" 
+                        subclass="toc-entry"
+                        aclass="list-group-item.list-group-item-action"
+                    %}
+                    {% include post_toc.html   
+                        html=content 
+                        title=page.title
+                        titlelink=page.url
+                        titleclass="article-part"
+                        iscurrent="yes"
+                        class="section-nav" 
+                        subclass="toc-entry"
+                        aclass="list-group-item.list-group-item-action"
+                    %}
+                    {% include post_toc.html   
+                        html=content 
+                        title="Test2"
+                        titlelink="/curse-of-dimensionality/"
+                        titleclass="article-part"
+                        iscurrent="no"
+                        class="section-nav" 
+                        subclass="toc-entry"
+                        aclass="list-group-item.list-group-item-action"
+                    %}
                 </div>
                 <div class="overlay"></div>
             </div>

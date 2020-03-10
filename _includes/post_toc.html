@@ -23,11 +23,14 @@
         
     {% endcomment %}
 
+{% capture my_toc %}{% endcapture %}
+
 {% assign minHeader = include.h_min | default: 1 %}
 {% assign maxHeader = include.h_max | default: 6 %}
 {% assign nodes = include.html | split: '<h' %} 
 {% assign firstHeader=true %} 
 
+{% if include.iscurrent == 'yes' %}
 {% for node in nodes %} 
     {% if node=="" %} {% continue %} {% endif %} 
     
@@ -57,10 +60,12 @@
 {{ space }}- {:.{{ include.subclass }}}[{% if include.sanitize %}{{ header | strip_html }}{% else %}{{ header }}{% endif %}](#{{ html_id }}){:.{{ include.aclass }}}{% endcapture %}
 
 {% endfor %}
+{% endif %}
 
 {% if include.class %}
 {% capture my_toc %}
   {:.{{ include.class }}}
+  - {:.{{ include.subclass }}.{{ include.titleclass }}}[{{ include.title }}]({% if include.iscurrent == 'yes' %}#{% else %}{{ include.titlelink }}{% endif %}){:.{{ include.aclass }}}
   {{ my_toc | lstrip }}
 {% endcapture %}
 {% endif %}
