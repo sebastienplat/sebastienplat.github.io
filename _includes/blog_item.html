@@ -1,0 +1,32 @@
+<li class="bookmark">
+    
+    <a class="bookmark-img" href="{{ include.post.url }}">
+        <img src="{{ include.post.image | default: '/assets/img/pw-ds.png'}} ";/>
+    </a>
+    
+    <div class="bookmark-child">
+        
+        <!-- Title -->
+        <a href="{{ include.post.url }}">
+            <h3 class="bookmark-title">{{post.title}}</h3>
+        </a>
+        
+        <!-- Overview -->
+        <div class="bookmark-date">
+            {% if include.post.date  %}
+            <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp {{ include.post.date | date: "%b %d, %Y"  }}</span>
+            {% endif %}
+            
+            {% if include.post.categories %}
+                <span>&nbsp•&nbsp</span>
+                <ul class="tags">
+                    {% for category in include.post.categories %}
+                    <li><span>{{ category }}</span></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        
+    </div>
+    
+</li>

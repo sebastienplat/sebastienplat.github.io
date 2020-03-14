@@ -10,40 +10,18 @@ permalink: /blog/
         <div class="col-lg-10">
         
             <ul class="list-unstyled ul-no-style">
-            
+
+                {% assign filtered_collections = site.collections | where_exp:"item", "item.label != 'posts'" %}
+                {% for collection in filtered_collections %}
+                    {% for post in collection.docs %}
+                        {% include blog_item.html post=post %}
+                    {% endfor %} 
+                {% endfor %} 
+                
                 {% for post in site.posts %}
-                    <li class="bookmark">
-                        
-                        <a class="bookmark-img" href="{{post.url}}">
-                            <img src="{{post.image | default: '/assets/img/pw-ds.png'}}";/>
-                        </a>
-                        
-                        <div class="bookmark-child">
-                            
-                            <!-- Title -->
-                            <a href="{{post.url}}"><h3 class="bookmark-title">
-                                {{post.title}}
-                            </h3></a>
-                            
-                            <!-- Overview -->
-                            <div class="bookmark-date">
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp {{ post.date | date: "%b %d, %Y"  }}</span>
-                                
-                                {% if post.categories %}
-                                    <span>&nbsp•&nbsp</span>
-                                    <ul class="tags">
-                                        {% for category in post.categories %}
-                                        <li><span>{{category}}</span></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
-                            
-                        </div>
-                        
-                    </li>
-                    
-               {% endfor %} 
+                    {% include blog_item.html post=post %}
+                {% endfor %} 
+                
             </ul>
             
         </div>

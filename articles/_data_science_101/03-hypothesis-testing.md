@@ -1,3 +1,6 @@
+---
+---
+
 We have explains which test to choose in the article on [statistical inference](https://sebastienplat.github.io/blog/statistical-inference/), based on:
 
 + what hypothesis is tested.

@@ -1,7 +1,7 @@
 
 .scrollspy-example {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - #{$navbar-height});
     margin-top: inherit;
     overflow: auto;
 }
@@ -14,23 +14,43 @@
     padding: 15px 30px 15px 0;   
     
     &.navbar-collapse { align-items: flex-start; }
+    
+    > .list-group {
+        border-left: 1px solid #eee;
+    }
 }
 
-.section-nav {
-    padding: 0;
-    border-left: 1px solid #eee;
-    ul {
-        padding-left: 1rem;
-        padding-bottom: 0.5rem;
-    }
+
+ul.section-nav {
+    padding: 5px;
+    margin-bottom: 0;
+    margin-left: 15px;
+    
+    border-bottom: 1px solid #eee;
+    &:last-child { border-bottom: None; }
+    
+    ul { padding-left: 15px; }
     ul, li { margin-bottom: 0; }
+    
+    > .toc-entry { padding-bottom: 10px; }
+    
 }
 
 .toc-entry {
     display: block;
+    
+    &.article-part { 
+        padding-top: 10px; 
+        > a {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    
     > a {
         display: block;
-        padding: .1rem 1rem;
+        padding: 1px 0;
         color: #99979c;
         font-size: 14px;
         line-height: 1.75em;
@@ -41,7 +61,7 @@
     }
     
     /* bootstrap element for scrollspy */
-    .list-group-item {
+    > .list-group-item {
         z-index: 2;
         color: inherit;
         background-color: inherit;

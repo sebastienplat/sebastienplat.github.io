@@ -1,3 +1,6 @@
+---
+---
+
 ## Introduction
 
 > The goal of [**statistical inference**](https://www.encyclopediaofmath.org/index.php/Statistical_inference) is to make **generalizations about the population** when **only a sample is available**.
