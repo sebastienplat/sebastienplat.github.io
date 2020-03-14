@@ -41,4 +41,10 @@ share: yes            # Change it to `no` to remove share buttons (setup in _inc
 include:
   - _pages
   
+# article series
+collections:
+  data_science_101:
+    sort_by: page_number
+    output: true
 
+collections_dir: articles
