@@ -30,7 +30,7 @@
 {% assign nodes = include.html | split: '<h' %} 
 {% assign firstHeader=true %} 
 
-{% if include.iscurrent == 'yes' %}
+{% if include.titlelink == include.current_url %}
 {% for node in nodes %} 
     {% if node=="" %} {% continue %} {% endif %} 
     
@@ -65,7 +65,7 @@
 {% if include.class %}
 {% capture my_toc %}
   {:.{{ include.class }}}
-  - {:.{{ include.subclass }}.{{ include.titleclass }}}[{{ include.title }}]({% if include.iscurrent == 'yes' %}#{% else %}{{ include.titlelink }}{% endif %}){:.{{ include.aclass }}}
+  - {:.{{ include.subclass }}.{{ include.titleclass }}}[{{ include.title }}]({% if include.titlelink == include.current_url %}#{% else %}{{ include.titlelink }}{% endif %}){:.{{ include.aclass }}}
   {{ my_toc | lstrip }}
 {% endcapture %}
 {% endif %}

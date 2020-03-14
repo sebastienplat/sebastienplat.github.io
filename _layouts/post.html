@@ -51,37 +51,22 @@ layout: default
 
         <div class="col-lg-2 navbar-expand-lg">
             <div class="collapse navbar-collapse bd-toc" id="navbarNavAltMarkup">
+                
                 <div id='toc' class="list-group">
-                    {% include post_toc.html   
-                        html=content 
-                        title="Test2"
-                        titlelink="/curse-of-dimensionality/"
-                        titleclass="article-part"
-                        iscurrent="no"
-                        class="section-nav" 
-                        subclass="toc-entry"
-                        aclass="list-group-item.list-group-item-action"
-                    %}
-                    {% include post_toc.html   
-                        html=content 
-                        title=page.title
-                        titlelink=page.url
-                        titleclass="article-part"
-                        iscurrent="yes"
-                        class="section-nav" 
-                        subclass="toc-entry"
-                        aclass="list-group-item.list-group-item-action"
-                    %}
-                    {% include post_toc.html   
-                        html=content 
-                        title="Test2"
-                        titlelink="/curse-of-dimensionality/"
-                        titleclass="article-part"
-                        iscurrent="no"
-                        class="section-nav" 
-                        subclass="toc-entry"
-                        aclass="list-group-item.list-group-item-action"
-                    %}
+                
+                    {% for article in site.data_science_101 %}
+                        {% include post_toc.html   
+                            html=content 
+                            title=article.title
+                            titlelink=article.url
+                            titleclass="article-part"
+                            current_url=page.url
+                            class="section-nav" 
+                            subclass="toc-entry"
+                            aclass="list-group-item.list-group-item-action"
+                        %}
+                    {% endfor %}
+                
                 </div>
                 <div class="overlay"></div>
             </div>
