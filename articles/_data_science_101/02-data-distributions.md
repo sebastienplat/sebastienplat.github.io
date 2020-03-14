@@ -1,3 +1,6 @@
+---
+---
+
 ## Data Types
 
 We leverage several kinds of data to do statistical analysis:

@@ -41,4 +41,19 @@ share: yes            # Change it to `no` to remove share buttons (setup in _inc
 include:
   - _pages
   
+# article series
+collections_dir: articles
 
+collections:
+  data_science_101:
+    output: true
+    permalink: articles/:collection/:title
+
+defaults:
+  - scope:
+      path: ""
+      type: "data_science_101"
+    values:
+      layout: "post"
+
+      
