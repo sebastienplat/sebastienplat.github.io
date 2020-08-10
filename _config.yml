@@ -17,6 +17,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+markdown: kramdown    # Kramdown is supported by Github
+
+# site-wide variables
+enable-mathjax: yes   # Mathjax setting
+share: yes            # Change it to `no` to remove share buttons (setup in _includes)
+ 
 # Exclude from processing.
 # exclude:
 #   - .sass-cache/
@@ -33,13 +39,9 @@ plugins:
 # This defines how the URLs should look like
 permalink: /blog/:title/
 
-markdown: kramdown    # Kramdown is supported by Github
-enable-mathjax: yes   # Mathjax setting
-share: yes            # Change it to `no` to remove share buttons (setup in _includes)
- 
-# Jekyll will read contents inside _pages only if we tell it to
-include:
-  - _pages
+# Jekyll will load contents inside _xxx only if we tell it to
+#include:
+#  - _pages
   
 # article series
 collections_dir: articles
@@ -55,5 +57,9 @@ defaults:
       type: "data_science_101"
     values:
       layout: "post"
-
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
       
