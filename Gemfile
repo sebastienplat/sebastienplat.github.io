@@ -10,13 +10,13 @@ source "https://rubygems.org"
 
 
 # jekyll gem for github-pages (to upgrade, run `bundle update github-pages`)
-gem "github-pages", "~> 202", group: :jekyll_plugins
+gem "github-pages", "~> 207", group: :jekyll_plugins
 
 # plugins list
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.11"
-  gem 'jekyll-sitemap', "~> 1.2"
-  gem 'jekyll-seo-tag', "~> 2.5"
+  gem "jekyll-feed", "~> 0.13"
+  gem 'jekyll-sitemap', "~> 1.4"
+  gem 'jekyll-seo-tag', "~> 2.6"
   gem "jekyll-paginate", "~> 1.1"
 end
 
