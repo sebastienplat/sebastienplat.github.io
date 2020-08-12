@@ -245,3 +245,11 @@ A good way to prevent this is to normalize input variables so they are all in th
 + ensembling of predictors
 
 
+#### See Also
+
+See also:
+
++ [Introduction to ML](http://scikit-learn.org/stable/tutorial/statistical_inference/supervised_learning.html)
++ [Tutorial](http://scikit-learn.org/stable/tutorial/basic/tutorial.html#introduction)
++ [LDA](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) for NLP
++ [LDA paper](http://ai.stanford.edu/~ang/papers/jair03-lda.pdf) for NLP
