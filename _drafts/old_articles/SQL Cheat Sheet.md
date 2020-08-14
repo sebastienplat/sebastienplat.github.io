@@ -1,5 +1,124 @@
 _Note: SQL stands for **S**tructured **Q**uery **L**anguage_
 
+# RDBMS
+
+#### Terminology
+
+**RDBMS** stands for Relational DataBase Management System. It is a DBMS based on the relational model, introduced in the early 1970s by IBM.
+
+In a  [RDBMS](https://en.wikipedia.org/wiki/Relational_database), data is stored in tables (or "relations") of columns and rows. 
+
++ each table represents one "entity type" (such as customer or product)
++ each row represents an instance of that entity type (such as "Lee" or "chair") 
++ columns represents the values attributed to that instance (such as address or price)
+
+_Note: rows are also called "records" or "tuples". Columns are also known as "fields"._
+
+**Relationships** are a logical connection between different tables, established on the basis of interaction among these tables.
+
+
+#### Constraints
+
+Constraints are rules enforced on data columns or tables. They are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the database.
+
+There are several commonly used SQL constraints:
+
+##### Primary Key
+
+The **PRIMARY KEY** is a field or group of fields (in that case, we talk about composite key) that uniquely identifies each row of the table:
+
++ no record can have a NULL primary key value
++ no two records can have the same primary key value
+
+
+##### Secondary Key
+
+The **FOREIGN KEY** is a field or group of fields (in that case, we talk about composite key) whose values match a Primary Key in a different table.
+
+The purpose of the foreign key is to ensure referential integrity of the data. In other words, only values that are supposed to appear in the database are permitted. Operations that violate the referential integrity of this relationship will return an error. 
+
+For example, let's consider two tables: CUSTOMER and ORDERS. Business logic requires that all orders are associated with an existing customer. To enforce this logic, we can place a foreign key on the ORDERS table that references the primary key of the CUSTOMER table. With it, the ORDERS table cannot contain information on a customer that is not in the CUSTOMER table.
+
++ inserting a row in ORDERS with a customer ID not in CUSTOMERS
++ deleting a row in CUSTOMERS whose ID is in the ORDERS foreign key column
+
+##### Other constraints
+
++ **UNIQUE**: ensures that all values in a column are different
++ **NOT NULL**: ensures that a column cannot have NULL value
++ **DEFAULT**: provides a default value for a column when none is specified
++ **CHECK**: ensures that all values in a column satisfy certain conditions
+
+
+#### Data Integrity
+
+The following categories of the data integrity exist with each RDBMS:
+
++ **Entity Integrity**: ensures no duplicate rows in a table
++ **Domain Integrity**: enforces valid entries for a given column by restricting the type, the format, or the range of values
++ **Referential integrity**: rows cannot be deleted, which are used by other records
++ **User-Defined Integrity**: enforces some specific business rules that do not fall into entity, domain or referential integrity
+
+
+#### Normalization
+
+[Database normalization](https://en.wikipedia.org/wiki/Database_normalization) is the process of efficiently organizing data in a database. There are two reasons of the normalization process:
+
++ Eliminating redundant data
++ Ensuring data dependencies make sense
+
+Normalization consists of a series of guidelines divided into successive normal forms. The [first three](http://phlonx.com/resources/nf3) are the most commonly used. 
+
+1. No repeating elements or groups of elements
+2. No partial dependencies on a concatenated key
+3. No dependencies on non-key attributes
+
+##### 1NF
+
+No Repeating Elements or Groups of Elements (atomicity).
+
++ Create a separate table for each set of related data
++ Identify each set of related data with a primary key
++ Store data in atomic (indivisible) values (ie. one atomic value per row per column)
+
+
+##### 2NF
+
+No Partial Dependencies on a Composite Key. 
+
+Each column in the table that is not part of the primary key must depend upon the entire concatenated key for its existence.
+
+For each column, we ask this question: Can this column exist without one or the other part of the concatenated primary key?
+
+If the answer is "yes" — even once — then the table fails Second Normal Form and we must create another table to rectify the failure.
+
+
+##### 3NF
+
+No Dependencies on Non-Key Attributes.
+
+The third norm was designed to improve database processing while minimizing storage costs:
+
++ reduces the duplication of data
++ ensures referential integrity by having one unique source for each value (so any update is automatically applied to the whole database)
+
+For each column, we ask this question: Can it exist independent of the primary key?
+
+If the answer is "yes" — even once — then the table fails Third Normal Form and we must create another table to rectify the failure.
+
+
+#### ACID transactions
+
+[ACID](https://en.wikipedia.org/wiki/ACID) stands for Atomicity, Consistency, Isolation, and Durability.
+
++ **Atomicity**: requires that each transaction be "all or nothing". If one part of the transaction fails, then the entire transaction fails, and the database state is left unchanged.
++ **Consistency**: ensures that any transaction will bring the database from one valid state to another, according to all defined rules (constraints, cascades, triggers, ...)
++ **Isolation**: ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed sequentially, i.e., one after the other. 
++ **Durability**: ensures that once a transaction has been committed, it will remain so even in the event of power loss, crashes, or errors
+
+
+
+
 # QUERIES
 
 #### Clauses Order

@@ -115,6 +115,17 @@ See also:
 
 #### SCIKIT LEARN
 
+See also:
+
++ [Introduction to ML](http://scikit-learn.org/stable/tutorial/statistical_inference/supervised_learning.html)
++ [Tutorial](http://scikit-learn.org/stable/tutorial/basic/tutorial.html#introduction)
++ [LDA](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) for NLP
++ [LDA paper](http://ai.stanford.edu/~ang/papers/jair03-lda.pdf) for NLP
+
+Every algorithm is exposed via an Estimator object. 
+
+Basic ML project structure for supervised learning:
+
 ```
 # import relevant packages
 from sklearn.family import Model
