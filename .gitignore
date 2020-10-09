@@ -9,3 +9,4 @@ vendor
 .virtual_documents
 __pycache__
 *.csv
+_drafts/data
