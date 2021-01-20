@@ -8,7 +8,7 @@ import statsmodels as sm
 from matplotlib import pyplot as plt
 from scipy import stats
 
-data_path = 'C:/Users/sebastien.plat/Documents/Github/sebastienplat.github.io/ds_resources/'
+data_path = '../../data/'
 
 def load_undata():
     """
