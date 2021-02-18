@@ -45,17 +45,15 @@ for i, species in enumerate(species):
     # sample stats
     size = len(petal_length)
     mean = np.mean(petal_length)
-    std = np.std(petal_length)
+    var = np.var(petal_length)
+    se = np.sqrt(var/size)
     median = np.median(petal_length)
 
     # CI for pop mean
-    tdist = stats.t(df=size-1, loc=mean, scale=std)
+    tdist = stats.t(df=size-1, loc=mean, scale=se)
     interval = tdist.interval(0.95)
     ax3.hlines(species, interval[0], interval[1], color=colors[i], lw=2.5)
-    ax3.vlines([interval[0], mean, interval[1]], i - 0.1, i + 0.1, color=colors[i], lw=2.5)
-
-    # summary
-    #print('{: <10}: median: {:0.2} - mean: {:0.3} - std: {:0.2} - interval: ({:0.2f}, {:0.2f})'.format(species, median, mean, std, interval[0], interval[1]))
+    ax3.vlines([interval[0], interval[1]], i - 0.05, i + 0.05, color=colors[i], lw=2.5)
 
 # labels
 _ = ax2.set_xlabel('petal length (cm)')
@@ -66,7 +64,7 @@ _ = ax3.set_ylabel('species')
 # titles
 _ = ax1.set_title('Boxplots')
 _ = ax2.set_title('ECDFs')
-_ = ax3.set_title('Confidence Intervals of the pop. mean')
+_ = ax3.set_title('95% Confidence Intervals of the pop. mean')
 
 fig.suptitle('Comparizon of the distribution of petal lenghts across species')
 
