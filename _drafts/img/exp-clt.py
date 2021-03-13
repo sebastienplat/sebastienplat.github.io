@@ -1,3 +1,10 @@
+#modules
+import numpy as np
+import seaborn as sns
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+sns.set()
+
 # lambda
 lb = 5
 expn = stats.expon(scale=lb)
@@ -5,7 +12,7 @@ norm = stats.norm(lb, lb)
 
 # fig
 fig, axes = plt.subplots(nrows=1, ncols=4, figsize = (4 * 5, 4))
-fig.suptitle('Sampling distribution of the sample mean for the Exponential distribution')
+fig.suptitle('Sampling distribution of the sample mean for the Exponential distribution with lambda=5')
 
 # pdf
 x1 = np.linspace(0, 30, 101)
@@ -38,3 +45,6 @@ for ax in axes:
 
 # titles
 plt.tight_layout(rect=[0, 0, 0.9, 0.9])
+
+# show fig
+plt.show()
