@@ -1,4 +1,9 @@
 
+.toc-wrapper.navbar-expand-lg {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .scrollspy-example {
     position: relative;
     height: calc(100vh - #{$navbar-height});
@@ -8,11 +13,11 @@
 
 .bd-toc {
     position: sticky;
-    top:4rem;
+    top:2rem;
     height: calc(100vh - 4rem);
     overflow-y: auto;
-    padding: 15px 30px 15px 0;   
-    
+    padding: 15px 10px 15px 0;   
+	
     &.navbar-collapse { align-items: flex-start; }
     
     > .list-group {
@@ -24,7 +29,7 @@
 ul.section-nav {
     padding: 5px;
     margin-bottom: 0;
-    margin-left: 15px;
+    margin-left: 10px;
     
     border-bottom: 1px solid #eee;
     &:last-child { border-bottom: None; }
@@ -32,17 +37,19 @@ ul.section-nav {
     ul { padding-left: 15px; }
     ul, li { margin-bottom: 0; }
     
-    > .toc-entry { padding-bottom: 10px; }
+    > .toc-entry { 
+		padding-bottom: 10px; 
+	}
     
 }
 
 .toc-entry {
     display: block;
-    
+	
     &.article-part { 
         padding-top: 10px; 
         > a {
-            font-size: 14px;
+            font-size: $small-fs;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -52,7 +59,7 @@ ul.section-nav {
         display: block;
         padding: 1px 0;
         color: #99979c;
-        font-size: 14px;
+        font-size: $small-fs;
         line-height: 1.75em;
         &:hover{
             color: $brand-color;

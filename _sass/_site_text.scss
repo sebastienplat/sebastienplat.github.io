@@ -21,8 +21,8 @@
 /* font variables */
 $color: #333; /* 373f47 47525d #444 */
 
-$base-fs: 18px;
-$small-fs: 16px;
+$base-fs: 16px;
+$small-fs: 14px;
 $base-fw: 400;
 $head-fw: 400;
 $base-lh: 1.75em;
@@ -67,6 +67,10 @@ h1, h2, h3, h4, h5, h6 {
     + h1, + h2, + h3, + h4, + h5, + h6 {
         margin-top: 0;
     }
+}
+
+h2 { 
+	font-weight: 600;
 }
 
 
