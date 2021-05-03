@@ -289,23 +289,22 @@ section {
     
     /* min-height: 400px; */
 	padding: 50px 0 50px 0;
-    
-    .section-title {
-        font-family: $base-ff;
-        color: $grey-color;
-        text-transform: uppercase;
-        line-height: 1.8;
-        margin-bottom: 50px;
-        position: relative;
+}
 
-        &:after {
-          content: "";
-          display: block;
-          border-bottom: 3px solid lighten($brand-color, 10%);
-          width: 10%;
-          margin: 0 auto;
-        }
-    }
+.section-title {
+	font-family: $head-ff;
+	color: $grey-color;
+	line-height: 1.8;
+	margin-bottom: 30px;
+	position: relative;
+
+	&:after {
+	  content: "";
+	  display: block;
+	  border-bottom: 3px solid lighten($brand-color, 10%);
+	  width: 10%;
+	  margin: 0 auto;
+	}
 }
 
 

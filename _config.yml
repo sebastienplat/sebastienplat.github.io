@@ -46,6 +46,7 @@ collections_dir: articles
 
 collections:
   data_science_101:
+    name: "Data Science 101"
     output: true
     permalink: articles/:collection/:title
 

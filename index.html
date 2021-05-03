@@ -1,9 +1,45 @@
 ---
 layout: default
+title: Articles
+description: Posts.
 ---
 
-{% include home_latest-posts.html %}
-
-
+<div class="container-fluid">
+	<div class="row justify-content-center">
+        <div class="col-lg-8 col-max-820">
+		
+			{% assign filtered_collections = site.collections | where_exp:"item", "item.label != 'posts'" %}
+			{% for collection in filtered_collections %}
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="post-title text-center">{{collection.name}}</h3>
+					</div>
+				</div>
+				
+				<ul class="list-unstyled ul-no-style">
+					{% for post in collection.docs %}
+						{% include blog_item.html post=post %}
+					{% endfor %} 
+				 </ul>
+			{% endfor %} 		
+		
+			<!--
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="section-title text-center">Blog Posts</h3>
+				</div>
+			</div>
+            <ul class="list-unstyled ul-no-style">
+				{% comment %}
+                {% for post in site.posts %}
+                    {% include blog_item.html post=post %}
+                {% endfor %} 
+				{% endcomment %}
+            </ul>
+            -->
+			
+        </div>
+	</div>
+</div>
 
 
