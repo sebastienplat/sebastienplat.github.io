@@ -9,7 +9,7 @@
 .col-max-820 { 
     max-width: 820px; 
     background-color: #fff;
-    padding: 20px 55px;
+    padding: 35px 55px;
 } 
 
 @media (max-width: $screen-sm-max) {
@@ -25,13 +25,14 @@
 /* ---------- title ---------- */
 
 .post-title {
-    color: $brand-color;
+    color: $color;
     font-weight: 600;
-    font-size: 3em;
+    font-size: 2.7em;
+	border-bottom: 2px solid $color;
 }
 
 .post-subtitle {
-    margin-top: -1.5em;
+    margin-top: -1.15em;
     margin-bottom: 3.5em;
 }
 
