@@ -6,4 +6,7 @@ vendor
 
 .course_material
 .ipynb_checkpoints
+.virtual_documents
+__pycache__
 *.csv
+data

@@ -1,0 +1,30 @@
+---
+layout: page
+title: Articles
+description: Find all about avocado jekyll theme posts here.
+permalink: /blog/
+---
+
+<div class="container">
+	<div class="row justify-content-center">
+        <div class="col-lg-10">
+        
+            <ul class="list-unstyled ul-no-style">
+
+                {% assign filtered_collections = site.collections | where_exp:"item", "item.label != 'posts'" %}
+                {% for collection in filtered_collections %}
+                    {% for post in collection.docs %}
+                        {% include blog_item.html post=post %}
+                    {% endfor %} 
+                {% endfor %} 
+                
+                {% for post in site.posts %}
+                    {% include blog_item.html post=post %}
+                {% endfor %} 
+                
+            </ul>
+            
+        </div>
+	</div>
+</div>
+
