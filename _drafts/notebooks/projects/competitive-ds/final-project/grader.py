@@ -125,6 +125,7 @@ class Week3_Grader(object):
                 submission["parts"][part] = dict()
         request = requests.post(self.submission_page, data=json.dumps(submission))
         response = request.json()
+        print(response)
         if request.status_code == 201:
             print('Submitted to Coursera platform. See results on assignment page!')
         elif u'details' in response and u'learnerMessage' in response[u'details']:
